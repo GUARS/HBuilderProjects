@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<style type="text/css">
+			.footer{
+				display: table;
+				/*height: 0px;*/
+				width: 100%;
+				position: fixed;
+				top: 0;
+			}
+			.footer>div{
+				display: table-cell;
+			}
+			.testLoad{
+				margin-top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="testLoad">	
+			
+		</div>
+		<div class="footer">
+			<div class="item" data-item="content1">div1</div>
+			<div class="item"data-item="content2">div2</div>
+			<div class="item"data-item="content3">div3</div>
+			
+		</div>
+	</body>
+	<script>
+		$(".footer").get(0).onclick=function(event){
+			var item = event.target
+			if(item.className=="item"){
+				$(".testLoad").load(item.getAttribute("data-item")+".html");
+			history.pushState({},"123",item.getAttribute("data-item")+".html")
+			}
+		}
+		
+	</script>
+</html>
