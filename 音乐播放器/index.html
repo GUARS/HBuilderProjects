@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.container {
+				width: 800px;
+				height: 800px;
+				position: relative;
+				/*margin: 0 auto;*/
+			}
+			
+			.bg {
+				position: absolute;
+				left: 400px;
+				top: 200px;
+			}
+			
+			.bg1 {
+				position: absolute;
+				left: 57px;
+				top: 62px;
+				animation: xuanzhuan 2s infinite linear;
+			}
+			
+			.singerImage img {
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+			}
+			
+			.singerAndsong h1 {
+				color: deepskyblue;
+			}
+			
+			.singerAndsong p {
+				color: white;
+			}
+			
+			.singerAndsong {
+				text-align: center;
+				position: absolute;
+				top: 100px;
+				left: 230px;
+			}
+			
+			.singerImage {
+				position: absolute;
+				left: 199px;
+				top: 199px;
+				animation: xuanzhuan 10s infinite linear;
+			}
+			
+			.play_bt {
+				position: absolute;
+				left: 233px;
+				top: 233Px;
+				cursor: pointer;
+			}
+			
+			.hit {
+				position: absolute;
+				left: 186px;
+				top: 332px;
+			}
+			
+			.next {
+				position: absolute;
+				left: 290px;
+				top: 338px;
+			}
+			
+			.yyjd {
+				position: absolute;
+				left: 70px;
+				top: 45px;
+				animation: xuanzhuan 10s infinite linear;
+			}
+			
+			.next,
+			.hit {
+				cursor: pointer;
+				text-align: center;
+			}
+			
+			@keyframes xuanzhuan {
+				from {
+					transform: rotateZ(0deg);
+				}
+				to {
+					transform: rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<audio id="audio1" src="music/The Dawn.mp3">
+				
+			</audio>
+			<img src="images/bg.jpg" alt="" />
+			<div class="bg">
+
+				<div class="yybw"><img src="images/yybw.png" alt="" /></div>
+				<div class="bg1"><img src="images/bg1.png" alt="" /></div>
+				<div class="singerAndsong">
+					<p class="singer">龚玥</p>
+					<h1 class="muiscName">母亲</h1>
+				</div>
+				<div class="singerImage">
+					<img src="images/0.jpg" alt="" />
+				</div>
+				<div class="yyjd"><img src="images/yyjd.png" /></div>
+				<div class="play_bt"><img src="images/pause.png" /></div>
+				<div class="hit">
+					<img src="images/ht.png" alt="" />
+					<p>好听</p>
+				</div>
+				<div class="next">
+					<img src="images/next.png" alt="" />
+					<p>下一曲</p>
+				</div>
+
+			</div>
+		</div>
+		<script>
+			var musicList = [
+				"The Dawn.mp3",
+				"你把我灌醉.mp3",
+				"白月光.mp3",
+				"光明.mp3",
+				"海阔天空.mp3",
+				"讲不出再见.mp3",
+				"母亲.mp3",
+				"让我欢喜让我忧.mp3",
+				"十五的月亮.mp3",
+				"因为爱情.mp3"
+			];
+			var currentSong = 0;
+			var isplay = true;
+			var playbt = $(".play_bt");
+			var next = $(".next");
+			var audio1 = $("#audio1").get(0);
+			var musicname = musicList[currentSong].split(".")[0];
+			audio1.autoplay = true;
+			audio1.onended=function(){
+				if ((currentSong + 1) < musicList.length) {
+					currentSong++;
+					audio1.src = "music/" + musicList[currentSong];
+					console.log(audio1.src);
+					audio1.play();
+				} else {
+					currentSong = 0;
+					audio1.src = "music/" + musicList[currentSong];
+					audio1.play();
+				}
+				$(".muiscName").text(musicList[currentSong].split(".")[0]);
+			}
+			playbt.click(function() {
+				if (isplay) {
+					playbt.children("img").attr({
+						src: "images/play.png"
+					});
+					audio1.pause();
+					isplay = false;
+				} else if (!isplay) {
+					playbt.children("img").attr({
+						src: "images/pause.png"
+					});
+					audio1.play();
+					isplay = true;
+				}
+			})
+			next.click(function() {
+				if ((currentSong + 1) < musicList.length) {
+					currentSong++;
+					audio1.src = "music/" + musicList[currentSong];
+					console.log(audio1.src);
+					audio1.play();
+				} else {
+					currentSong = 0;
+					audio1.src = "music/" + musicList[currentSong];
+					audio1.play();
+				}
+				$(".muiscName").text(musicList[currentSong].split(".")[0]);
+			})
+		</script>
+	</body>
+
+</html>

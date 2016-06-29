@@ -1,0 +1,21 @@
+.money{
+	background: white;
+	font-size: 2em;
+	padding: 50px 100px 100px 100px;
+	color: lightcoral;
+}
+.sqtx{
+		padding:30px ;
+		text-align: center;
+		background: white;
+		margin-top: 20px;	
+}
+.sqtxbt{
+	border-radius: 10px;
+	padding: 20px 0;
+	display: inline-block;
+	font-size: 1.5em;
+	width: 100%;
+	background: #006DB4;
+	color: white;
+}

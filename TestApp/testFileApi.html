@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="file" multiple="multiple" />
+			<button class="read">read</button>
+			<div>Attention: can read image and text</div>
+	
+		</form>
+		<div class="result"></div>
+	</body>
+	<script>
+	document.querySelector(".read").onclick = function(){
+
+		
+		var fileList = document.forms[0].querySelector('[type=file]').files;
+//		alert(fileList)
+		for(var i =0;i<fileList.length;i++){
+			var file = fileList[i];
+			if((/image\/\w+/.test(file.type)))
+			{
+				showImg(file);
+			}else if((/text\/\w+/.test(file.type))){
+				showText(file)
+			}
+		}
+		return false;
+	}
+	function showImg(file){
+		var fileReader = new FileReader();
+		fileReader.readAsDataURL(file);
+		fileReader.onload= function(){
+			var result = this.result;
+			var img = document.createElement("img");
+			img.src= result;
+			document.querySelector(".result").appendChild(img)
+		}
+
+	}
+	function showText(file){
+		var fileReader = new FileReader();
+		fileReader.readAsText(file,'utf-8');
+		fileReader.onload = function(){
+			var result = this.result;
+			var div = document.createElement("div");
+			div.innerText=result;
+		document.querySelector(".result").appendChild(div);
+		}
+	}
+		
+		
+	</script>
+</html>

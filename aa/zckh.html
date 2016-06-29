@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" href="css/biaodan.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<link rel="stylesheet" type="text/css" href="css/zckh.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			ul {
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<header class="header">
+				<a href="personinfo.html"><i class="fa fa-arrow-left left"></i></a>
+				<span class="title">
+					
+					注册客户
+				</span>
+
+			</header>
+			<div class="content">
+				<form action="">
+					<ul class="form-content">
+						<li><span>客户姓名：</span><input type="text" id="" value="" /></li>
+						<li><span>手机号：</span><input type="text" /></li>
+						<li><span>身份证号：</span><input type="text" /></li>
+						<li>
+							<div class="regi-item regi-item-tong regi-item-pos">
+								<span>客户类型：</span>
+								<input type="text" id="custType" value="钻石会员" readonly="readonly"  />
+								<i class="kehuxiala fa fa-angle-down"></i>
+								<ul class="meber-list">
+									<li class="meber-list-item">钻石会员</li>
+									<li class="meber-list-item">金牌会员</li>
+									<li class="meber-list-item">银牌会员</li>
+									<li class="meber-list-item">普通会员</li>
+								</ul>
+							</div>
+						</li>
+						<li><span>性别：</span>
+
+							<input type="radio" name="sex" id="" value="man" checked="checked" />
+							<span>男</span>
+							<input type="radio" name="sex" id="" value="women" />
+							<span>女</span>
+							<li><span>EMail：</span><input type="text" /></li>
+							<li><span>联系地址：</span><input type="text" /></li>
+							<li>
+								<div class="xieyi"><input type="checkbox" checked="checked" name="" id="" value="" /><span>我已经同意以下条款<a href="">《用户使用协议》</a></span></div>
+							</li>
+					</ul>
+					<input class="form-sub" type="submit" id="" name="完成注册" />
+				</form>
+
+			</div>
+			<footer class="footer">
+				<ul>
+					<li><a href="shouye.html"><i class="img"><img src="img/NagIcon/sy.png" alt="" /></i><span class="footer-wenzi ">首页</span></a></li>
+					<li><a href="cyxm.html"><i class="img"><img src="img/NagIcon/xm.png"/></i><span class="footer-wenzi ">创业项目</span></a></li>
+					<li><a href="bmlc.html"><i class="img"><img src="img/NagIcon/lc.png"/></i><span class="footer-wenzi">报名流程</span></a></li>
+					<li><a href="ptfc.html"><i class="img"><img src="img/NagIcon/pt.png"/></i><span class="footer-wenzi">平台风采</span></a></li>
+					<li><a href="personinfo.html"><i class="img"><img src="img/NagIcon/wdh.png"/></i><span class="footer-wenzi font-red">我的滴滴</span></a></li>
+				</ul>
+			</footer>
+			</footer>
+		</div>
+		<script type="text/javascript">
+		var clickNum = 0;
+		$(".kehuxiala").click(function(){
+			clickNum++;
+			if(clickNum%2!=0){
+				$(".meber-list").addClass("meber-list-active");
+				
+			}else{
+				$(".meber-list").removeClass("meber-list-active");
+			}
+			
+		})
+		$(".meber-list-item").click(function(){
+			
+				$("#custType").val($(this).html());
+		})
+		
+	
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,92 @@
+.content{
+	font-size: 1.4em;
+	margin: 0 10px;
+	
+}
+.custRegi li{
+	
+}
+.regi-item-tong{
+	display: inline-block;
+	width: 100%;
+	margin: 10px 0;
+	border: 1px solid #CCCCCC;
+	
+	border-radius: 10px;
+	background: white;
+}
+.regi-item-other{
+	display: inline-block;
+	width: 60%;
+	margin: 10px 0;
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+	background: white;
+}
+
+.xieyi{
+	font-size: 0.8em;
+	padding: 0 0 20px;
+}
+.xieyi img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.regi-item span{
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	text-align: right;
+	border-right: 1px solid  #888;
+	padding: 10px 4px;
+	color: #555555;
+}
+.regi-item-other span{
+	width: 41%;
+	height: 100%;
+}
+.regi-item-other input[type=text]{
+	height: 2em;
+	width: 55%;
+	vertical-align: middle;
+	font-size: 1.1em;
+	border: 0;
+	outline: 0;
+	
+}
+.regi-item-tong input[type=text]{
+	height:2em;
+	width: 60% ;
+	vertical-align: middle;
+	font-size: 1.1em;
+	border: 0;
+	outline: 0;
+}
+.regi-item-right{
+	display: inline-block;
+	width: 30%;
+	/*width: calc(40% - 6px);*/
+	margin-left: 5px;
+	padding: 10px;
+	border-radius: 10px;
+	vertical-align: middle;
+	background: white;
+	border: 1px solid lightgray;
+	height: 44px;
+}
+ .getMmsAuth{
+	font-size: 0.9em;
+	color: #D3D3D3;
+	background: #f35008;
+	/*background: red;*/
+	
+}
+input[type=submit]{
+	background:#006db4 ;
+	font-size: 1.2em;
+	padding: 10px 0;
+	width: 100%;
+	border-radius: 10px;
+	border: transparent;
+	color:#EEEEEE;
+}

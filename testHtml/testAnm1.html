@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<!--测试旋转和动画-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background: black;
+			}
+			
+			.wrap {
+				perspective: 1000px;
+				/*perspective-origin: 20% 200%;*/
+				position: relative;
+			}
+			
+			.wrap>div {
+				transform-style: preserve-3d;
+			}
+			
+			.wrap .sun {
+				width: 200px;
+				height: 20px;
+				position: absolute;
+				left: 225px;
+				top: 240px;
+				animation: sunAn 5s infinite linear;
+			}
+			
+			.mer {
+				width: 25px;
+				height: 25px;
+				background-image: url(img/mercury.png);
+				background-size: cover;
+				animation: an 5s infinite linear;
+			}
+			
+			.bg {
+				height: 150px;
+				width: 150px;
+				position: absolute;
+				left: 30%;
+				top: 150px;
+				background: green;
+				z-index: 2;
+				border-radius: 50%;
+			}
+			
+			@keyframes sunAn {
+				0% {
+					transform: rotateY(0deg)
+				}
+				100% {
+					transform: rotateY(360deg)
+				}
+			}
+			
+			@keyframes an {
+				0% {
+					transform: rotateY(0deg)
+				}
+				100% {
+					transform: rotateY(-360deg)
+				}
+			}
+			
+			.bg {
+				margin-top: 10px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				animation: wenzi1 5s linear infinite;
+			}
+			
+			.wenzi {
+				width: 40px;
+				font-size: 25px;
+				color: red;
+			}
+			
+			@keyframes wenzi1 {
+				from {
+					transform: rotateY(0deg);
+				}
+				to {
+					transform: rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="bg">
+				<div class="wenzi">你还好吗</div>
+			</div>
+			<div class="sun">
+				<div class="mer">
+
+				</div>
+			</div>
+
+		</div>
+	</body>
+
+</html>

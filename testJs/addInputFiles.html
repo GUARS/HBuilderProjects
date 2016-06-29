@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<input type="file" name="" id="" value="" />
+			<input id="button" type="button" name="添加" value="添加" />
+			
+		</form>
+		
+		
+	</body>
+	<script>
+		var fileIndex=0;
+		var bt= document.getElementById("button");
+		document.getElementById("button").onclick=function(){
+		var ad =document.createElement("input");
+		ad.type="file";
+		ad.name="image"+(fileIndex++);
+		document.forms[0].insertBefore(ad,bt);
+		}
+		document.forms[0].onsubmit = function(){
+		
+		}
+		
+	</script>
+</html>

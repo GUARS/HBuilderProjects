@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			
+			footer {
+				border-top: 1px solid #aaa;
+				width: 100%;
+				height: 70px;
+				position: fixed;
+				padding: 10px 10px 0px 10px;
+				bottom: 0px;
+				background: #fff;
+				/*overflow: auto;*/
+			}
+			
+			.leftImage {
+				width: calc(100% - 100px);
+				display: inline-block;
+				overflow: auto;
+				white-space: nowrap;
+			}
+			
+			.checkImg {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				/*border: 1px solid red;*/
+				border-radius: 50%;
+			}
+			
+			.nullChecked {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border: 1px solid red;
+				border-radius: 50%;
+			}
+			
+			.ok_bt {
+				display: inline-block;
+				width: 100px;
+				height: 50px;
+				background: red;
+				text-align: center;
+				line-height: 50px;
+				position: absolute;
+				right: 10px;
+			}
+			
+			.check {
+				width: 50px;
+				height: 50px;
+				vertical-align: middle;
+			}
+			
+			.touxiang {
+				width: 60px;
+				height: 60px;
+			}
+			
+			.name {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.item {
+				/*margin: 0px 20px;*/
+				width: 100%;
+				/*background: #fff;*/
+				/*text-align: center;*/
+				display: table;
+				border-bottom: 1px solid #AAAAAA;
+			}
+			
+			.item>div {
+				display: table-cell;
+				padding: 10px;
+			}
+			
+			.item>div>img {
+				width: 100%;
+				border-radius: 50%;
+			}
+			
+			.list {
+				padding: 0 20px;
+			}
+			
+			header {
+				border-top: 1px solid #aaa;
+				width: 100%;
+				height: 50px;
+				display: table;
+				vertical-align: middle;
+				line-height: 50px;
+				bottom: 0px;
+				background: #fff;
+				background: red;
+				color: white;
+			}
+			
+			header:last-child {
+				text-align: center;
+			}
+			
+			header>* {
+				display: table-cell;
+				text-align: center;
+			}
+			
+			.search {
+				/*position: relative;*/
+				/*width: 100%;*/
+				margin: 0 auto;
+				height: 50px;
+			}
+			
+			input[type=text] {
+				/*position: absolute;*/
+				outline: 0;
+				border: 1px solid #AAAAAA;
+				border-radius: 2px;
+				margin: 10px auto;
+				width: 80%;
+				height: 30px;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+			.paneltitle {
+				margin-top: 10px;
+				height: 40px;
+				padding: 0 0 0 20px;
+				line-height: 40px;
+				background: #AAAAAA;
+			}
+			
+			.search {
+				background: #AAAAAA;
+				padding: 0 10px;
+			}
+			
+			.choiceAll {
+				display: inline-block;
+				background: red;
+				width: 60px;
+				height: 25px;
+				text-align: center;
+				margin-left: 20px;
+				color: white;
+			}
+			
+			.main {
+				margin-bottom: 80px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<!--<img src="img/default.png"/>-->
+
+	<body>
+		<!--天气图片链接：http://i.tq121.com.cn/i/weather2015/png/blue30.png-->
+		<header>
+			<div class="left">
+				<</div> <span>添加歌曲</span></header>
+		<div class="search">
+			<input type="text" name="" id="" value="" placeholder="搜索" />
+			<!--<span class="choiceAll" data-choiceAll="yes">全选</span>-->
+		</div>
+		<div class="main">
+		</div>
+		<footer>
+			<div class="leftImage">
+				<span class="hadChecked"></span>
+				<span class="nullChecked"></span>
+			</div>
+			<span class="ok_bt">确定(<span class="count"> </span>)</span>
+		</footer>
+	</body>
+	<script>
+	search();
+		function search() {
+			var input = document.querySelector('.search input')
+			var oldVal = input.value;
+			window.onkeyup = function(event) {
+				var newVal = input.value;
+				if(oldVal!=newVal){
+					getdata(newVal);
+				}
+			}
+			function getdata(val){
+				var url='http://i.y.qq.com/s.plcloud/fcgi-bin/smartbox_new.fcg?utf8=1&is_xml=0&key='+val+'&g_tk=5381&loginUin=0&hostUin=0&format=json&inCharset=GB2312&outCharset=utf-8&notice=0&platform=yqq&jsonCallback=?&needNewCode=0'
+				$.getJSON(url,function(data){
+					eval(data);
+				})
+				function jsonCallback(data){
+					alert(JSON.stringify(data));
+				}
+				
+			}
+			
+		}
+
+		var main = document.getElementsByClassName("main")[0];
+		var url1 = "http://i.y.qq.com/v8/fcg-bin/v8_4web.fcg?&format=json&jsoncallback=?";
+		$.getJSON(url1, function(data) {
+			eval(data);
+		})
+		var checktImg = 'http://i.gtimg.cn/mediastyle/y/img/cover_mine_130.jpg';
+		var defaultImg = "img/default.png";
+
+		function jsoncallback(data) {
+			var data = data.data;
+
+			var j = 0;
+			var str = '';
+			for (var p in data) {
+				str += '<div class="paneltitle" data-target="' + p + '">' + p + '</div>' + '<ul class="' + p + ' list">';
+				console.log(p);
+				for (var i = 0; i < data[p].length; i++) {
+					if (data[p][i].songname) {
+						j++;
+						str += '<li class="item" data-state="no">'
+						str += '<div class="check"><img src="img/default.png"/></div>';
+						str += '<div class="touxiang check"><img data-mid="' + data[p][i].singer[0].mid + '"src="' + getImgUrl(data[p][i].singer[0].mid) + '"/></div>'
+						str += '<div class="' + p + ' name">' + data[p][i].songname + '';
+						str += "</li>"
+					}
+				}
+				str += "</ul>"
+			}
+			main.innerHTML = str;
+
+		}
+
+		function getImgUrl(id) {
+			var baseUrl = "http://i.gtimg.cn/music/photo/mid_singer_300/";
+			var id_arr = id.split("");
+			var id_length = id_arr.length;
+			var dir = id_arr[id_length - 2] + "/" + id_arr[id_length - 1];
+			return baseUrl + dir + "/" + id + ".jpg";
+		}
+
+		//分组开关事件处理
+		//列表是否打开
+		var isOn = true;
+		//		var isCheked = false
+		main.onclick = function(event) {
+			if (event.target.hasAttribute("data-target")) {
+				var c = event.target.getAttribute("data-target");
+				var ch = document.getElementsByClassName(c)[0];
+				if (isOn) {
+					ch.style.display = "none";
+				} else {
+					ch.style.display = "block";
+				}
+				isOn = !isOn;
+			} else if (event.target.parentElement.className == "item") {
+				var parentele = event.target.parentElement;
+				changeImg(parentele);
+				//				addImg();
+			} else if (event.target.parentElement.parentElement.className == "item") {
+				var parentele = event.target.parentElement.parentElement;
+				changeImg(parentele);
+				//				addImg(mid);
+			}
+
+		}
+
+		function changeImg(ele) {
+			var isChecked = ele.getAttribute("data-state");
+			var paele = ele;
+			var mid = ele.querySelector(".touxiang").firstElementChild.getAttribute("data-mid");
+			var ele = ele.firstElementChild.getElementsByTagName("img")[0];
+			var countele = document.querySelector(".count");
+
+			if (isChecked == "yes") {
+				ele.src = defaultImg;
+				paele.setAttribute("data-state", "no")
+				removeImg(mid);
+
+			} else {
+				ele.src = checktImg;
+				paele.setAttribute("data-state", "yes")
+				addImg(mid);
+			}
+			countele.innerText = changeCount(!(isChecked == "yes"), countele.innerText);
+		}
+		document.querySelector(".choiceAll").onclick = function() {
+			var countele = document.querySelector(".count");
+			var itemList = document.querySelectorAll(".item");
+			var choice = document.querySelector('.choiceAll');
+			var isChoiceAll = choice.getAttribute('data-choiceAll');
+			var hadchecked = document.querySelector('.hadChecked');
+			if (isChoiceAll == 'yes') {
+				var imglist = hadchecked.querySelectorAll("img")
+				for (var i = 0; i < imglist.length; i++) {
+					hadchecked.remove(imglist[i]);
+				}
+				countele.innerText = 0;
+			}
+
+			for (var i = 0; i < itemList.length; i++) {
+				//			itemList[i].getAttribute()
+				if (itemList[i].getAttribute('data-state') == 'yes' && isChoiceAll == 'yes') {
+
+					itemList[i].setAttribute('data-state', 'no');
+
+				} else if (itemList[i].getAttribute('data-state') == 'no' && isChoiceAll == 'no') {
+					itemList[i].setAttribute('data-state', 'yes');
+
+				} else if (itemList[i].getAttribute('data-state') == 'yes' && isChoiceAll == 'no') {
+					itemList[i].setAttribute('data-state', 'yes');
+
+				} else if (itemList[i].getAttribute('data-state') == 'no' && isChoiceAll == 'yes') {
+					itemList[i].setAttribute('data-state', 'no');
+
+				}
+				changeImg(itemList[i]);
+			}
+			var isChoiceAll = isChoiceAll == 'yes' ? 'no' : 'yes';
+			choice.setAttribute('data-choiceAll', isChoiceAll);
+		}
+
+		function changeCount(state, count) {
+			if (state) {
+				count++;
+			} else {
+				count--;
+			}
+			return count;
+		}
+
+		function addImg(mid) {
+			var leftImg = document.querySelector('.leftImage');
+			var had = document.getElementsByClassName("hadChecked")[0];
+			if (!had) {
+				had = document.createElement('span');
+				had.className = 'hadChecked';
+				leftImg.insertBefore(had, leftImg.lastElementChild);
+			}
+			var newImg = document.createElement("img");
+			newImg.className = "checkImg";
+			newImg.src = getImgUrl(mid);
+			newImg.setAttribute("data-mid", mid);
+			had.appendChild(newImg);
+
+		}
+
+		function removeImg(mid) {
+			var had = document.getElementsByClassName("hadChecked")[0];
+			var ele = had.querySelector('[data-mid="' + mid + '"]');
+			had.removeChild(ele);
+		}
+
+		var hadchecked = document.querySelector('.hadChecked');
+		hadchecked.onclick = function(event) {
+			if (event.target.hasAttribute('data-mid')) {
+				var mid = event.target.getAttribute('data-mid');
+				var parele = main.querySelector('[data-mid="' + mid + '"]').parentElement.parentElement;
+				changeImg(parele);
+			}
+
+		}
+	</script>
+
+</html>

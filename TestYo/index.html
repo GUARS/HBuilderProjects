@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/ani.css"/>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<style type="text/css">
+		/*.a:hover{
+			background: red;
+		}*/
+		.a{
+			width: 100px; height: 100px; background: greenyellow;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="a ani elastic-out" ></div>
+		
+	
+	<script type="text/javascript">
+		var a = $(".a");
+		a.click(function(){
+			a.addClass("ani fade-in-left");
+			setTimeout(function(){
+				a.removeClass("ani");
+				
+			},1000)
+			
+			
+			
+		})
+		
+	</script>
+	</body>
+</html>

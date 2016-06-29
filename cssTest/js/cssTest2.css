@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+.five {
+  display: none;
+}
+.seven {
+  display: none;
+}
+.five .header,
+.five .footer {
+  width: 100%;
+  height: 100px;
+  background: red;
+  position: fixed;
+}
+.five .footer {
+  bottom: 0;
+  display: table;
+}
+.five .footer a {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: blue;
+}
+.five .footer a:nth-child(2n) {
+  background: #aaaaaa;
+}
+.seven ul {
+  display: inline-block;
+  padding: 20px;
+  list-style: none;
+  border-right: 1px dotted red;
+  position: relative;
+}
+.seven ul li {
+  padding: 20px 10px;
+  background: #AAAAAA;
+}
+.seven ul .base::before {
+  content: "";
+  right: -5px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #AAAAAA;
+}
+.seven ul .base {
+  border-bottom: 1px solid transparent;
+}
+.seven ul .blue::before {
+  background: blue;
+}
+.seven ul .blue {
+  border-bottom: 1px solid blue;
+}
+.seven .seven-t {
+  display: table;
+}
+.seven .seven-t > ul {
+  display: table-cell;
+}
+.seven .seven-t .list {
+  display: table-cell;
+}
+.seven .seven-t .list [class^=item] {
+  padding: 20px;
+  display: none;
+}
+.seven .seven-t .list .item-active {
+  display: block;
+}
+.nine .main {
+  display: table;
+  margin: 20px;
+}
+.nine .list,
+.nine .main-right {
+  display: inline-block;
+  border: 1px solid red;
+  display: table-cell;
+}
+.nine .list li {
+  padding: 20px 20px;
+  margin-right: -1px;
+}
+.nine .list .active {
+  border: 1px solid red;
+  border-right: 1px solid white;
+  border-left: 1px solid transparent;
+}
+.nine .main-right {
+  width: 200px;
+  height: 200px;
+  border-left: 0;
+}
+.nine .main-right .item2 {
+  display: none;
+}
+.nine .main-right .active1 {
+  display: block;
+}
+/*# sourceMappingURL=cssTest2.css.map */

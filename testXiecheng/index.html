@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+	<!--
+	携程城市建议搜索
+    http://hotels.ctrip.com/Domestic/Tool/AjaxGetCitySuggestion.aspx
+    -->
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/"></script>
+	</body>
+	<script>
+			
+
+		var aCitys = new Array();
+        aCitys[0] = new Array("AKU", "阿克苏", "AKeSu", "AKS");
+        aCitys[1] = new Array("AAT", "阿勒泰", "ALeTai", "ALT");
+        aCitys[2] = new Array("AKA", "安康", "AnKang", "AK");
+        aCitys[3] = new Array("AQG", "安庆", "AnQing", "AQ");
+        aCitys[4] = new Array("AOG", "鞍山", "AnShan", "AS");
+        aCitys[5] = new Array("BSD", "保山", "BaoShan", "BS");
+        aCitys[6] = new Array("BAV", "包头", "BaoTou", "BT");
+        aCitys[7] = new Array("BHY", "北海", "BeiHai", "BH");
+        aCitys[8] = new Array("PEK", "北京", "BeiJing", "BJ");
+        aCitys[9] = new Array("BFU", "蚌埠", "BengBu", "BB");
+        aCitys[10] = new Array("CGQ", "长春", "ChangChun", "CC");
+        aCitys[11] = new Array("CGD", "常德", "ChangDe", "CD");
+        aCitys[12] = new Array("CSX", "长沙", "ChangSha", "CS");
+        aCitys[13] = new Array("CIH", "长治", "ChangZhi", "CZ");
+        aCitys[14] = new Array("CZX", "常州", "ChangZhou", "CZ");
+        aCitys[15] = new Array("CHG", "朝阳", "ChaoYang", "CY");
+        aCitys[16] = new Array("CTU", "成都", "ChengDu", "CD");
+        aCitys[17] = new Array("CIF", "赤峰", "ChiFeng", "CF");
+        aCitys[18] = new Array("CKG", "重庆", "ChongQing", "CQ");
+        aCitys[19] = new Array("DAX", "达县", "DaXian", "DX");
+        aCitys[20] = new Array("DLC", "大连", "DaLian", "DL");
+        aCitys[21] = new Array("DLU", "大理", "DaLi", "DL");
+        aCitys[22] = new Array("DDG", "丹东", "DanDong", "DD");
+        aCitys[23] = new Array("DAT", "大同", "DaTong", "DT");
+        aCitys[24] = new Array("DNH", "敦煌", "DunHuang", "DH");
+        aCitys[25] = new Array("ENH", "恩施", "EnShi", "ES");
+        aCitys[26] = new Array("FUG", "阜阳", "FuYang", "FY");
+        aCitys[27] = new Array("FYN", "富蕴", "FuYun", "FY");
+        aCitys[28] = new Array("FOC", "福州", "FuZhou", "FZ");
+        aCitys[29] = new Array("KOW", "赣州", "GanZhou", "GZ");
+        aCitys[30] = new Array("GOQ", "格尔木", "GeErMu", "GEM");
+        aCitys[31] = new Array("GHN", "广汉", "GuangHan", "GH");
+        aCitys[32] = new Array("GYS", "广元", "GuangYuan", "GY");
+        aCitys[33] = new Array("CAN", "广州", "GuangZhou", "GZ");
+        aCitys[34] = new Array("KWL", "桂林", "GuiLin", "GL");
+        aCitys[35] = new Array("KWE", "贵阳", "GuiYang", "GY");
+        aCitys[36] = new Array("HRB", "哈尔滨", "HaErBin", "HEB");
+        aCitys[37] = new Array("HAK", "海口", "HaiKou", "HK");
+        aCitys[38] = new Array("HLD", "海拉尔", "HaiLaEr", "HLE");
+        aCitys[39] = new Array("HMI", "哈密", "HaMi", "HM");
+        aCitys[40] = new Array("HGH", "杭州", "HangZhou", "HZ");
+        aCitys[41] = new Array("HZG", "汉中", "HanZhong", "HZ");
+        aCitys[42] = new Array("HFE", "合肥", "HeFei", "HF");
+        aCitys[43] = new Array("HEK", "黑河", "HeiHe", "HH");
+        aCitys[44] = new Array("HNY", "衡阳", "HengYang", "HY");
+        aCitys[45] = new Array("HTN", "和田", "HeTian", "HT");
+        aCitys[46] = new Array("HKG", "香港", "HongKong", "XG");
+        aCitys[47] = new Array("TXN", "黄山", "HuangShan", "HS");
+        aCitys[48] = new Array("HYN", "台州", "TaiZhou", "TZ");
+        aCitys[49] = new Array("HET", "呼和浩特", "HuHeHaoTe", "HHHT");
+        aCitys[50] = new Array("KNC", "吉安", "JiAn", "JA");
+        aCitys[51] = new Array("JMU", "佳木斯", "JiaMuSi", "JMS");
+        aCitys[52] = new Array("JGN", "嘉峪关", "JiaYuGuan", "JYG");
+        aCitys[53] = new Array("JIL", "吉林", "JiLin", "JL");
+        aCitys[54] = new Array("TNA", "济南", "JiNan", "JN");
+        aCitys[55] = new Array("JNG", "济宁", "JiNing", "JN");
+        aCitys[56] = new Array("JDZ", "景德镇", "JingDeZhen", "JDZ");
+        aCitys[57] = new Array("JHG", "西双版纳", "XiShuangBanNa", "XSBN");
+        aCitys[58] = new Array("JJN", "晋江", "JinJiang", "JJ");
+        aCitys[59] = new Array("JNZ", "锦州", "JinZhou", "JZ");
+        aCitys[60] = new Array("CHW", "酒泉", "JiuQuan", "JQ");
+        aCitys[61] = new Array("JIU", "九江", "JiuJiang", "JJ");
+        aCitys[62] = new Array("JZH", "九寨沟", "JiuZhaiGou", "JZG");
+        aCitys[63] = new Array("KHG", "喀什", "KaShi", "KS");
+        aCitys[64] = new Array("KRL", "库尔勒", "KuErLe", "KEL");
+        aCitys[65] = new Array("KMG", "昆明", "KunMing", "KM");
+        aCitys[66] = new Array("KCA", "库车", "KuChe", "KC");
+        aCitys[67] = new Array("LHW", "兰州", "LanZhou", "LZ");
+        aCitys[68] = new Array("LXA", "拉萨", "LaSa", "LS");
+        aCitys[69] = new Array("LYG", "连云港", "LianYunGang", "LYG");
+        aCitys[70] = new Array("LJG", "丽江", "LiJiang", "LJ");
+        aCitys[71] = new Array("LYI", "临沂", "LinYi", "LY");
+        aCitys[72] = new Array("LZH", "柳州", "LiuZhou", "LZ");
+        aCitys[73] = new Array("LYA", "洛阳", "LuoYang", "LY");
+        aCitys[74] = new Array("LZO", "泸州", "LuZhou", "LZ");
+        aCitys[75] = new Array("MFM", "澳门", "MaCau", "AM");
+        aCitys[76] = new Array("LUM", "芒市", "MangShi", "MS");
+        aCitys[77] = new Array("MXZ", "梅县", "MeiXian", "MX");
+        aCitys[78] = new Array("MIG", "绵阳", "MianYang", "MY");
+        aCitys[79] = new Array("MDG", "牡丹江", "MuDanJiang", "MDJ");
+        aCitys[80] = new Array("KHN", "南昌", "NanChang", "NC");
+        aCitys[81] = new Array("NAO", "南充", "NanChong", "NC");
+        aCitys[82] = new Array("NKG", "南京", "NanJing", "NJ");
+        aCitys[83] = new Array("NNG", "南宁", "NanNing", "NN");
+        aCitys[84] = new Array("NTG", "南通", "NanTong", "NT");
+        aCitys[85] = new Array("NNY", "南阳", "NanYang", "NY");
+        aCitys[86] = new Array("NGB", "宁波", "NingBo", "NB");
+        aCitys[87] = new Array("IQM", "且末", "QieMo", "QM");
+        aCitys[88] = new Array("TAO", "青岛", "QingDao", "QD");
+        aCitys[89] = new Array("IQN", "庆阳", "QingYang", "QY");
+        aCitys[90] = new Array("SHP", "秦皇岛", "QinHuangDao", "QHD");
+        aCitys[91] = new Array("NDG", "齐齐哈尔", "QiQiHaEr", "QQHE");
+        aCitys[92] = new Array("JUZ", "衢州", "QuZhou", "QZ");
+        aCitys[93] = new Array("SYX", "三亚", "SanYa", "SY");
+        aCitys[94] = new Array("SHA", "上海", "ShangHai", "SHHQ");
+        aCitys[95] = new Array("ICX", "龙岩", "longyan", "LY");
+        aCitys[96] = new Array("SWA", "汕头", "ShanTou", "ST");
+        aCitys[97] = new Array("SHS", "沙市", "ShaShi", "SS");
+        aCitys[98] = new Array("SZX", "深圳", "ShenZhen", "SZ");
+        aCitys[99] = new Array("SJW", "石家庄", "ShiJiaZhuang", "SJZ");
+        aCitys[100] = new Array("SYM", "思茅", "SiMao", "SM");
+        aCitys[101] = new Array("SZV", "苏州", "SuZhou", "SZ");
+        aCitys[102] = new Array("TCG", "塔城", "TaCheng", "TC");
+        aCitys[103] = new Array("TYN", "太原", "TaiYuan", "TY");
+        aCitys[104] = new Array("TSN", "天津", "TianJin", "TJ");
+        aCitys[105] = new Array("TNH", "通化", "TongHua", "TH");
+        aCitys[106] = new Array("TGO", "通辽", "TongLiao", "TL");
+        aCitys[107] = new Array("TEN", "铜仁", "TongRen", "TR");
+        aCitys[108] = new Array("WXN", "万县", "WanXian", "WX");
+        aCitys[109] = new Array("WEF", "潍坊", "WeiFang", "WF");
+        aCitys[110] = new Array("WEH", "威海", "WeiHai", "WH");
+        aCitys[111] = new Array("WNZ", "温州", "WenZhou", "WZ");
+        aCitys[112] = new Array("WUH", "武汉", "WuHanTianHe", "WHTH");
+        aCitys[113] = new Array("HLH", "乌兰浩特", "WuLanHaoTe", "WLHT");
+        aCitys[114] = new Array("WUX", "无锡", "WuXi", "WX");
+        aCitys[115] = new Array("URC", "乌鲁木齐", "WuLuMuQi", "WLMQ");
+        aCitys[116] = new Array("WUS", "武夷山", "WuYiShan", "WYS");
+        aCitys[117] = new Array("WUZ", "梧州", "WuZhou", "WZ");
+        aCitys[118] = new Array("XMN", "厦门", "XiaMen", "XM");
+        aCitys[119] = new Array("XIY", "西安", "XiAn", "XA");
+        aCitys[120] = new Array("XFN", "襄阳", "XiangYang", "XY");
+        aCitys[121] = new Array("XIC", "西昌", "XiChang", "XC");
+        aCitys[122] = new Array("XIL", "锡林浩特", "XiLinHaoTe", "XLHT");
+        aCitys[123] = new Array("XNN", "西宁", "XiNing", "XN");
+        aCitys[124] = new Array("XUZ", "徐州", "XuZhou", "XZ");
+        aCitys[125] = new Array("ENY", "延安", "YanAn", "YA");
+        aCitys[126] = new Array("YNJ", "延吉", "YanJi", "YJ");
+        aCitys[127] = new Array("YNT", "烟台", "YanTai", "YT");
+        aCitys[128] = new Array("YBP", "宜宾", "YiBin", "YB");
+        aCitys[129] = new Array("YIH", "宜昌", "YiChang", "YC");
+        aCitys[130] = new Array("INC", "银川", "YinChuan", "YC");
+        aCitys[131] = new Array("YIN", "伊宁", "YiNing", "YN");
+        aCitys[132] = new Array("YIW", "义乌", "YiWu", "YW");
+        aCitys[133] = new Array("UYN", "榆林", "YuLin", "YL");
+        aCitys[134] = new Array("ZAT", "昭通", "ZhaoTong", "ZT");
+        aCitys[135] = new Array("DYG", "张家界", "ZhangJiaJie", "ZJJ");
+        aCitys[136] = new Array("ZHA", "湛江", "ZhanJiang", "ZJ");
+        aCitys[137] = new Array("DIG", "迪庆", "DiQing", "DQ");
+        aCitys[138] = new Array("CGO", "郑州", "ZhengZhou", "ZZ");
+        aCitys[139] = new Array("HSN", "舟山", "ZhouShan", "ZS");
+        aCitys[140] = new Array("ZUH", "珠海", "ZhuHai", "ZH");
+        aCitys[141] = new Array("ZYI", "遵义", "ZunYi", "ZY");
+        aCitys[142] = new Array("YCU", "运城", "YunCheng", "YC");
+        aCitys[143] = new Array("NZH", "满洲里", "ManZhouLi", "MZL");
+        aCitys[144] = new Array("WUA", "乌海", "WuHai", "WH");
+        aCitys[145] = new Array("SHE", "沈阳", "ShenYang", "SY");
+        aCitys[146] = new Array("LNJ", "临沧", "LinCang", "LC");
+        aCitys[147] = new Array("DOY", "东营", "DongYing", "DY");
+        aCitys[148] = new Array("BFJ", "毕节", "bijie", "BJ");
+        aCitys[149] = new Array("PZI", "攀枝花", "PanZhiHua", "PZH");
+        aCitys[150] = new Array("WNH", "文山", "WenShan", "WS");
+        aCitys[151] = new Array("YNZ", "盐城", "YanCheng", "YC");
+        aCitys[152] = new Array("HJJ", "芷江", "ZhiJiang", "ZJ");
+        aCitys[153] = new Array("LCX", "龙岩", "LONGYAN", "LC");
+        aCitys[154] = new Array("KRY", "克拉玛依", "KeLaMaYi", "KLMY");
+        aCitys[155] = new Array("LZY", "林芝", "LinZhi", "LZ");
+        aCitys[156] = new Array("JGS", "井冈山", "JingGangShan", "JGS");
+        aCitys[157] = new Array("HDG", "邯郸", "HanDan", "HD");
+        aCitys[158] = new Array("DSN", "鄂尔多斯", "EErDuoSi", "EEDS");
+        aCitys[159] = new Array("ACX", "兴义", "XingYi", "XY");
+        aCitys[160] = new Array("LLF", "永州", "YongZhou", "YZ");
+        aCitys[161] = new Array("BPX", "邦达", "BangDa", "BD");
+        aCitys[162] = new Array("THQ", "天水", "TianShui", "TS");
+        aCitys[163] = new Array("OHE", "漠河", "MoHe", "MH");
+        aCitys[164] = new Array("NBS", "长白山", "ChangBaiShan", "CBS");
+        aCitys[165] = new Array("DQA", "大庆", "DaQing", "DQ");
+        aCitys[166] = new Array("JXA", "鸡西", "JiXi", "JX");
+        aCitys[167] = new Array("LDS", "伊春", "YiChun", "YC");
+        aCitys[168] = new Array("FUO", "佛山", "FoShan", "FS");
+        aCitys[169] = new Array("TCZ", "腾冲", "TengChong", "TC");
+        aCitys[170] = new Array("ZHY", "中卫", "ZhongWei", "ZW");
+        aCitys[171] = new Array("YUS", "玉树", "YuShu", "YS");
+        aCitys[172] = new Array("ERL", "二连浩特", "ErLianHaoTe", "ELHT");
+        aCitys[173] = new Array("HIA", "淮安", "HuaiAn", "HA");
+        aCitys[174] = new Array("TVS", "唐山", "TangShan", "TS");
+        aCitys[175] = new Array("KJI", "噶纳斯", "KaNaSi", "KNS");
+        aCitys[176] = new Array("NLT", "那拉提", "NaLaTi", "NLT");
+        aCitys[177] = new Array("NGQ", "阿里", "ALi", "AL");
+        aCitys[178] = new Array("HX", "香港航空", "Hong Kong Airlines", "HK");
+        aCitys[179] = new Array("BPL", "博乐", "BoLe", "BL");
+        aCitys[180] = new Array("AVA", "安顺", "AnShun", "AS");
+        aCitys[181] = new Array("JIC", "金昌", "jinchang", "JC");
+        aCitys[182] = new Array("GYU", "固原", "GuYuan", "GY");
+        aCitys[183] = new Array("RLK", "巴彦淖尔", "BAYAN NUR", "BYNE");
+        aCitys[184] = new Array("YTY", "扬州", "YangZhou", "YZ");
+        aCitys[185] = new Array("YIE", "阿尔山", "ArERSan", "AES");
+        aCitys[186] = new Array("jiq", "黔江", "QIANJIANG", "QIANJIANG");
+        aCitys[187] = new Array("JGD", "加格达", "JIAGEDA", "JIAGEDA");
+        aCitys[188] = new Array("JUH", "九华山", "jiuhuashan", "jhs");
+        aCitys[189] = new Array("YIC", "宜春", "YICHUN", "YC");
+        aCitys[190] = new Array("YZY", "张掖", "zhangye", "zy");
+        aCitys[191] = new Array("AEB", "百色", "baise", "bs");
+        aCitys[192] = new Array("LLV", "吕梁", "lvliang", "LL");
+        aCitys[193] = new Array("ZQZ", "张家口", "zhangjiakou", "ZJK");
+		
+	</script>
+	
+	
+	
+</html>

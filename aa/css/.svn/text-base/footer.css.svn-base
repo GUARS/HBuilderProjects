@@ -1,0 +1,52 @@
+
+.footer{
+	width: 100%;
+	/*flex-basis:6em;*/
+	background: black;
+
+	
+}
+
+.footer-wenzi{
+	color: white;
+	font-size: 0.8em;
+}
+.font-red{
+	color: red;
+}
+.footer ul{
+	/*display: -webkit-flex;*/
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	display: flex;
+
+}
+.footer li {
+	width:20%;
+	padding: 10px;
+	text-align: center;
+	-webkit-box-flex: 1;
+	flex-grow: 1;
+	/*flex-basis: 5em;*/
+
+}
+
+.footer .img{
+	margin: 0 auto;
+	margin-bottom: 5px;
+	display: block;
+	width: 1.6em;
+	height: 1.6em;
+}
+.footer .img img{
+	width: 100%;
+}
+@media only screen and (min-width: 100px) and (max-width: 360px) {
+	.footer{
+	width: 100%;
+	/*-webkit-flex-basis: 10em;
+	flex-basis: 10em;*/
+	background: black;
+
+}
+}

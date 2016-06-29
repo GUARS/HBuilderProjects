@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.container {
+				display: inline-block;
+				background: #ddd;
+			}
+			
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				padding: 10px;
+				display: inline-block;
+			}
+			
+			.key {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				background: greenyellow;
+				line-height: 50px;
+				margin: 10px;
+				border-radius: 10px;
+				cursor: pointer;
+				color: purple;
+			}
+			
+			[type=text] {
+				/*display: inline-block;*/
+				margin: 10px;
+				padding: 10px;
+				width: 260px;
+			}
+			
+			* {
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			var num1;
+			var num2;
+			var opration;
+			var cjym = function() {
+				var shuzu = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "+", "-", "*", "/", ".", "c","AC", "=" ];
+				document.write("<div class='container'><ul><li><input type='text'/></li>");
+				for (var i = 0; i < 5; i++) {
+					document.write("<li>");
+					for (var j = 0; j < 4; j++) {
+						if ((i * 4 + j) < 18) {
+							document.write("<span class=\"key\">" + shuzu[i * 4 + j] + "</span>")
+						}
+					}
+					document.write("</li>");
+				}
+				document.write("</ul></div>");
+			}
+			cjym();
+			var a = document.querySelectorAll(".key");
+			var b = document.querySelector("input[type=text]");
+			b.readOnly=true;
+			b.value = 0;
+			addEvent(a);
+
+			function addEvent(nodelist) {
+				var i = 0;
+				for (i = 0; i < nodelist.length; i++) {
+					(
+						function(i) {
+							nodelist[i].addEventListener("click", function() {
+								dispatch(this.textContent)
+							}, false);
+						}
+					)(i)
+				}
+			}
+
+			function dispatch(textcontent) {
+				if ("0123456789".indexOf(textcontent) > -1) {
+					setNum(textcontent);
+				} else if (("+-*/").indexOf(textcontent) > -1) {
+					setOpra(textcontent);
+				} else if ("=" == textcontent) {
+					doCalc();
+				} else if("c"==textcontent) {
+					clear();
+				}else{
+					clearAll();
+				}
+			}
+
+			function setNum(textcontent) {
+				if (b.value == "0") {
+					b.value = textcontent;
+				} else {
+					b.value += textcontent;
+				}
+				if (opration == undefined) {
+					num1 = b.value;
+				} else {
+					num2 = b.value;
+				}
+			}
+
+			function clear() {
+				b.value = 0;
+				if (num2 == undefined) {
+					num1 = undefined;
+				} else {
+					num2 = undefined;
+				}
+			}
+			function clearAll(){
+				b.value=0;
+				num1=undefined;
+				num2=undefined;
+			}
+
+			function setOpra(textcontent) {
+				b.value = 0;
+				if (num1 != undefined && opration == undefined) {
+					num1 = parseInt(num1);
+					opration = textcontent;
+				} else if (num1 != undefined && opration != undefined && num2 != undefined) {
+					num2 = parseInt(num2);
+					doCalc();
+					opration = textcontent;
+				}
+			}
+
+			function doCalc() {
+				if (num2 != undefined) {
+					if (typeof num2 == 'string' || typeof num1 == 'string') {
+						num2 = parseInt(num2);
+						num1 = parseInt(num1);
+					}
+					switch (opration) {
+						case "+":
+							b.value = (num1 + num2);
+							num1 = b.value;
+							num2 = undefined;
+							break;
+						case "-":
+						b.value = (num1 - num2);
+						alert(1);
+							num1 = b.value;
+							num2 = undefined;
+							break;
+						case "*":
+						b.value = (num1 * num2);
+							num1 = b.value;
+							num2 = undefined;
+							break;
+						case "/":
+							b.value = (num1 / num2);
+							
+							if(b.value == NaN||b.value==Infinity){
+								alert("输出结果不合法请重新计算")
+								clearAll();
+							}
+							num1 = b.value;
+							num2 = undefined;
+							break;
+							
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

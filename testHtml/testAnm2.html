@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--测试扭曲和缩放-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			body{
+				background: #000;
+			}
+			.wrap{
+				position: relative;
+				
+			}
+			.testskew{
+				position: absolute;
+				width: 100px;
+				height: 1∂00px;
+				top: 100px;
+				left: 1%;
+				background: green;
+				/*transform: skew(40deg,-40deg);*/
+				/*transform: scaleX(0.5);*/
+				/*animation: scal_skew 1s linear infinite;*/
+				animation: translate 2s ease-out infinite;
+				
+			}
+			@keyframes scal_skew{
+				from{
+					transform: scale(0,0);
+					transform: skew(0,0);
+					
+					
+				}
+				to{
+					transform: scale(2,2);
+					/*transform: skew(60deg,60deg);*/
+				}
+			}
+			@keyframes translate{
+				from{}
+				to{
+					transform: translateX(500px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="testskew">
+				1
+			</div>
+		</div>
+	</body>
+</html>

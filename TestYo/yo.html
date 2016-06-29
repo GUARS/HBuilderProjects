@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/test.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ani.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<title>YOUI</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.yo-tab-view {
+				background: ghostwhite;
+			}
+			
+			.yo-list {
+				display: none;
+			}
+			
+			.active {
+				display: block;
+			}
+			.yo-tab .item{
+				cursor: pointer;
+				border-left: 1px solid aquamarine;
+				color: green;
+			}
+			.yo-tab .item-on{
+				background: white;
+				color: red;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="yo-flex">
+			<header class="yo-header">
+				<!-- title居中显示同级中只能出现一次出现过多以第一个为主 
+				（affirm为右对齐 regret为左对齐可出现多次以最后一个为主 yo-ico为yo自带图标-->
+				<a href="" class="regret"><i class="fa fa-arrow-left"></i></a>
+				<div class="title">头部</div>
+				<a href="" class="affirm">文档</a>
+			</header>
+			<div class="yo-tab yo-tab-view ">
+				<a class="item item-y-ico item-on"><i class="yo-ico"><i class="fa fa-wifi"></i></i>item</a>
+				<a class="item">item</a>
+				<a class="item">item</a>
+			</div>
+			<div class="flex">
+				<section class="">
+					<ul class="yo-list  yo-wifi">
+						<li class="item"><img src="img/2.jpg" width="30px" height="30px" />yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+					</ul>
+					<ul class="yo-list active yo-zifi">
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+					</ul>
+					<ul class="yo-list yo-lifi">
+						<li class="item"><img src="img/2.jpg" width="30px" height="30px" />yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+						<li class="item">yo-list-item1</li>
+						<li class="item">yo-list-item2</li>
+						<li class="item">yo-list-item3</li>
+						<li class="item">yo-list-item4</li>
+						<li class="item">yo-list-item5</li>
+						<li class="item">yo-list-item6</li>
+					</ul>
+				</section>
+			</div>
+			<div class="yo-tab yo-tab-view yo-bottom ">
+				<span class="item item-y-ico item-on"><i class="yo-ico"><i class="fa fa-wifi"></i></i>item</span>
+				<span class="item">item</span>
+				<span class="item">item</span>
+			</div>
+
+		</div>
+		<script type="text/javascript">
+			var item = $(".yo-bottom  .item");
+			var yolist = $(".yo-list");
+			item.click(function() {
+				$($(this).siblings(".yo-bottom  .item")).removeClass("item-on");
+				$(this).addClass("item-on");
+				$($(yolist[item.index(this)]).siblings(".yo-list")).removeClass("active");
+				$(yolist[item.index(this)]).addClass("active ani speed-in-left");
+			});
+		</script>
+	</body>
+
+</html>

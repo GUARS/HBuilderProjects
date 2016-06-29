@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>小云</title>
+		<link rel="stylesheet" href="css/font-awesome.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				/*width: auto!important;
+					width: 761px;*/
+				/*min-width: 761px;*/
+			}
+			ul{
+				list-style: none
+				;
+			}
+			
+			
+			/*----------------contanier-----------------*/
+			
+			.container .con_item img {
+				width: 100%;
+				/*display: none;*/
+				height: auto;
+			}
+			
+			.container .item_2 h1 {
+				text-align: center;
+			}
+			
+			.container .item_2 p {
+				text-align: center;
+			}
+			
+			.container .item_2 .item_p {
+				padding: 10%;
+			}
+			
+			.container .item_4 .item4_bnp2 {
+				width: 30%;
+				float: left;
+				margin-top: 7%;
+				margin-bottom: 7%;
+			}
+			
+			.container .item_4 .item_p {
+				width: 50%;
+				float: right;
+				padding-top: 10%;
+			}
+			
+			.container .item_4 {
+				box-sizing: content-box;
+				height: auto;
+				clear: both;
+				overflow: hidden;
+				margin: 10%;
+			}
+			
+			.container .item_4 .item4_bnp2 img {
+				width: 100%;
+				height: auto;
+			}
+			
+			.container .item_6 {
+				overflow: hidden;
+				clear: both;
+				margin: 5%;
+			}
+			
+			.container .item_6 .item6_bnp {
+				width: 30%;
+				height: auto;
+				float: left;
+			}
+			
+			.container .item_6 .item-p {
+				width: 50%;
+				height: auto;
+				float: right;
+			}
+			
+			.item6_btn input {
+				width: 120px;
+				font-size: 1.5em;
+				border-radius: 20px/25px;
+				border: 2px solid #f00;
+				background: #FFFFFF;
+			}
+			
+			.item_6 input:hover {
+				background: #f00;
+			}
+			
+			.item_6 .item6_btn {
+				margin-top: 10%;
+			}
+			
+			.item_8 {
+				clear: both;
+				overflow: hidden;
+				padding: 10%;
+			}
+			
+			.item_8 .item8_left {
+				width: 50%;
+				float: left;
+			}
+			
+			.item_8 .item8_left .btn input {
+				width: 120px;
+				font-size: 1.5em;
+				border-radius: 20px/25px;
+				border: 2px solid #f00;
+				background: #FFFFFF;
+			}
+			
+			.item_8 .item8_left .btn {
+				margin-top: 10%;
+			}
+			
+			.item_8 .item8_left .btn input:hover {
+				background: #f00;
+			}
+			
+			.item_8 .right {
+				width: 30%;
+				float: right;
+			}
+			
+			.bn4b img {
+				width: 100%;
+			}
+			
+			p {
+				margin-top: 5%;
+			}
+			a{
+				text-decoration: none;
+			}
+			
+			.top {
+				display: flex;
+				justify-content: space-around;
+			}
+			a:link{
+				color: green;
+			}
+			a:visited{
+				background: red;
+			}
+			.footer .back_top{
+				width:5%;
+				
+			}
+			.footer .back_top img{
+				width: 100%;
+				border: 1px solid #C0C0C0;
+			}
+			.footer li{
+				list-style: none;
+			}
+			.footer .fa-phone{
+				color: red;
+				
+			}
+			.footer .phone a{
+				display: block;
+				width: 160px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 1.5em;
+				border: 2px solid red;
+				border-radius: 25px/20px;
+			}
+			.footer .phone a:hover{
+				color: #fff;
+				background: #f00;
+				
+			}
+			.footer .back_top img:hover{
+				
+				background: red;
+			}
+			.back_top{
+				position: fixed;
+				right:5%;
+				bottom: 20%;
+				
+			
+			}
+			@media screen and (min-width:800px) {
+				.header {
+				height: 83px;
+				/*background: green;*/
+				clear: both;
+				overflow: hidden;
+			}
+			
+			.header .logo img {
+				height: 72px;
+			}
+			
+			.header .logo {
+				float: left;
+			}
+			
+			.header .navigation {
+				float: right;
+			}
+			
+			.header .navigation {
+				display: table;
+				width: auto;
+				height: 72px;
+				/*display: none;*/
+			}
+			
+			.header .navigation li {
+				display: table-cell;
+			}
+			
+			.header .navigation li a {
+				text-decoration: none;
+				font-size: 100%;
+				margin-right: 20px;
+				color: #000000;
+				/*margin-bottom: 0px;*/
+			}
+			
+			.header .navigation li a:not(.login_a):hover {
+				color: #ff0000;
+			}
+			
+			.header .navigation .login_a {
+				border: 1px solid #CCCCCC;
+				border-radius: 20px/25px;
+				background: #FFFFFF;
+				font-size: 1em;
+			}
+			
+			.header .navigation .login_a:hover {
+				background: #ff0000;
+			}
+			.sm-na{
+				display: none;
+			}
+			i{
+				display: none;
+			}
+			}
+			@media screen and (max-width:800px ) {
+				.header{
+					display: none;
+				}
+				.sm-na{
+					display: block;
+					
+				}
+				.sm-na .daohang{
+					position: fixed;
+					width: 100%;
+					height: 40px;
+					display: table;
+					
+				}
+				.sm-na .daohang li{
+					text-align: center;
+					vertical-align: middle;
+					display: table-cell;
+					font-size: 20px;
+					background: #000000;
+					color: #FF9900;
+					border: 1px solid #008000;
+				}
+				.sm-na .daohang li a{
+					
+					color: #FF9900;
+				}
+				.sm-na i{
+					display: block;
+					position: fixed;	
+					top: 50px;
+					right: 50px;
+					font-size: 1.5em;
+					color: white;
+				}
+				.sm-na .cebianlan{
+					width: 100%;
+					height: 100%;
+					position: fixed;
+					background: #EEEEEE;
+					opacity: 0.8;
+					clear: both;
+					overflow: hidden;
+					display: none;
+					z-index: 5;
+				}
+				.sm-na .cebianlan  ul{
+					opacity: 1;
+					margin-top:40px ;
+					margin-right: 0px;
+					float: right;
+					background: black;					
+				}
+				.sm-na .cebianlan  ul li{
+					border-bottom: 1px solid wheat;
+					margin-bottom: 20px;
+					font-size: 1.5em;
+					cursor: pointer;
+				}
+				.sm-na .cebianlan ul{
+					
+				}
+				
+				
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		
+		
+		
+		<nav class="sm-na">
+				<i class="toggle fa fa-align-justify fa-3x"></i>
+				<nav class="cebianlan">
+					<ul>
+					<li class="shou" style="color: goldenrod;">收起</li>
+					<li><a href="#">产品</a></li>
+					<li><a href="#">小云商学院</a></li>
+					<li><a href="#">合作加盟</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+				</nav>
+				<ul class="daohang">
+					<li><a class="shouye" >首页</a></li>
+					<li><a href="#">产品</a></li>
+					<li><a href="#">小云商学院</a></li>
+					<li><a href="#">合作加盟</a></li>
+					<li><a href="#">关于</a></li>
+				</ul>
+				
+				</nav>
+		<a name="top"></a>
+		<div class="header">
+			<div class="logo">
+				<img src="img/logo.png" />
+			</div>
+			
+			<nav class="xm-na navigation">
+				<ul>
+					<li><a style="color: #FF9900;" href="#" target="_blank">首页</a></li>
+					<li><a href="#">产品</a></li>
+					<li><a href="#">小云商学院</a></li>
+					<li><a href="#">合作加盟</a></li>
+					<li><a href="#">关于</a></li>
+					<li>
+						<input class="login_a" type="button" value="商户登录" />
+					</li>
+				</ul>
+
+			</nav>
+		</div>
+		<div class="container">
+			<div class="con_item item_1"><img src="img/WiFi_banner-0.5s-1200.gif" /></div>
+			<div class="con_item item_2">
+				<div class="item_p">
+					<h1>Connect Local. 连接一切本地生活</h1>
+					<p>小云，让人们在每个小环境下，都能感受到贴心温暖与服务，场景化的智能服务体验，让网络从未如此简单。
+						<br /> 小云，专业级WiFi网络服务及营销服务提供商，助力传统商家进入移动网络时代。
+					</p>
+				</div>
+			</div>
+			<div class="con_item item_5"><img src="img/bn2.jpg" /></div>
+			<div class="con_item item_6">
+				<div class="item6_bnp">
+					<img src="img/bnp1.png" />
+				</div>
+
+				<div class="item-p">
+					<div>
+						<h1>让每一次连接都有价值</h1>
+						<p>小云为商户提供基于WiFi的周边营销及信息服务一体化解决方案，让用户与商户轻松连接，把握每一次与用户的连接机会。小云，发现商铺隐形价值。</p>
+					</div>
+					<div class="item6_btn">
+						<div>
+							<input type="button" value="小云WiFi" />
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="con_item item_3"><img src="img/bn1.jpg" /></div>
+
+			<div class="con_item item_4">
+				<div class="item4_bnp2"><img src="img/bnp2.png" /></div>
+				<div class="item_p">
+					<h1>让传统商业升级</h1>
+					<p>不仅是稳定、安全的商业WiFi，更重要的是，在场景互联的时代里， 当消费者把注意力放在手机上时，依然可以关注到你的品牌。
+					</p>
+				</div>
+			</div>
+
+			<div class="con_item item_7"><img src="img/bn3.jpg" /></div>
+			<div class="con_item item_8">
+				<div class="item8_left">
+					<div>
+						<h1>了解你的用户习惯</h1>
+						<p>每天，在每个连锁商铺，小云WiFi在提供无线服务的同时，也在记录宝贵的消费者数据信息，小云，定期的数据分析系统，把这些沉睡的数据唤醒， 让商家可以感知用户的温度。</p>
+					</div>
+					<div class="btn">
+						<input type="button" value="小米雷达" />
+					</div>
+				</div>
+				<div class="right"> <img src="img/bnp3.png" /></div>
+			</div>
+			<div></div>
+			<div class="bn4b">
+				<img src="img/bn4bg914.png">
+
+			</div>
+		</div>
+		<div class="footer">
+			<div class="top">
+
+				<div>
+					<h4>About US</h4>
+					<br />
+					<ul>
+						<li>关于我们</li>
+						<li>小云动态</li>
+						<li>小云商学院</li>
+						<li>合作加盟</li>
+					</ul>
+				</div>
+				<div>
+					<h4>友情链接</h4>
+					<ul>
+						<br />
+						<li>光音网络</li>
+						<li>科技寺</li>
+						<li>广告家</li>
+					</ul>
+				</div>
+				<div class="back_top">
+					<a href="#top"><img src="img/backtop.png" /></a>
+				</div>
+				<div class="phone">
+					<a href="#">  <i class="fa fa-phone"></i> 400 800 900</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var toggle=$(".toggle");
+			var ce=$(".cebianlan");
+			var  shou =$(".shou");
+			ce.click(function(){
+				ce.css({display:"none"});
+			})
+			toggle.click(function(){
+				ce.css({display:"block"});
+			});
+		</script>
+	</body>
+
+</html>

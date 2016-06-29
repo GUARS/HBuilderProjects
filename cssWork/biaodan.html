@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: content-box;
+			}
+			
+			div:nth-child(n+2) input[type=text] {
+				width: 30%;
+				position: relative;
+				height: 20px;
+				/*border: 1px solid;*/
+				outline: 1px solid red;
+			}
+			
+			.fa-check {
+				background: green;
+				width: 15px;
+				height: 15px;
+				line-height: 15px;
+				text-align: center;
+				border-radius: 50%;
+				color: white;
+				font-size: 12px;
+			}
+			
+			.fa-exclamation {
+				font-size: 12px;
+				background: red;
+				width: 15px;
+				height: 15px;
+				line-height: 20px;
+				text-align: center;
+				border-radius: 50%;
+				color: white;
+			}
+			
+			div:first-child input[type=text] {
+				width: 30%;
+				height: 20px;
+				/*border: 2px solid;*/
+				outline: 1px solid green;
+				/*box-shadow: 1px 0px 2px green,
+				-1px 0px 2px green;*/
+			}
+			div input[type=text]:focus{
+				outline: 1px solid gold;
+			}
+			
+			form>div {
+				padding: 30px 0;
+				border-bottom: 1px solid #eeeeff;
+			}
+			
+			form div span:first-child {
+				display: inline-block;
+				width: 30%;
+			}
+			
+			.tip {
+				display: inline-block;
+				width: 30%;
+			}
+			
+			input[type=submit] {
+				width: 100px;
+				height: 20px;
+				background: green;
+				color: white;
+				font-size: 19px;
+				box-shadow: 2px;
+			}
+			
+			form {
+				border: 1px solid red;
+				padding: 10px;
+			}
+			
+			form div>div {
+				display: inline;
+				position: relative;
+			}
+			
+			form div>div .fa {
+				position: absolute;
+				top: 1px;
+				right: 2px;
+			}
+			
+			div input {
+				position: relative;
+			}
+			
+			form div:nth-last-child(2) span {
+				vertical-align: top;
+			}
+			.clearfix::after{
+				display: table;
+				content: "";
+				clear: both;
+			}
+			h2{
+				display: inline;
+			}
+			@media only screen and (min-width:800px ) {
+				.tip span {
+				display: inline-block;
+				width: 400px;
+				background: red;
+				position: relative;
+				margin-left: 10px;
+				padding: 5px;
+				
+			}
+				.tip:before {
+				position: absolute;
+				border: 6px solid transparent;
+				border-right: 6px solid red;
+				content: "";
+				left: -12px;
+				top: 5px;
+			}
+			}
+			@media only screen and (max-width:800px) {
+				form div span:first-child {
+					width: 100%;
+					margin-bottom: 20px;
+				}
+				.tip {
+					width: 100%;
+					margin-top: 5px;
+				}
+				.tip span {
+				display: inline-block;
+				width: 30%;
+				color: red;
+				position: relative;
+				padding: 5px;
+			}
+			form{
+				text-align: left;
+			}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="clearfix"><span style="color: red;"><h2>联系我们😃</h2></span><span style="float: right">✨为必填项</span></div>
+		<hr />
+		<form action="" method="post">
+
+			<div><span>姓名：</span>
+				<div><input type="text" id="" value="" placeholder="输入姓名" /> <i class="fa fa-check"></i></div>
+			</div>
+			<div><span>电子邮件：</span>
+				<div><input type="text" id="" value="" /><i class="fa fa-exclamation"></i></div><span class="tip"><span>信息出错请改正🐟</span></span></div>
+			<div><span>网站：</span>
+				<div><input type="text" id="" value="" /><i class="fa fa-exclamation"></i></div><span class="tip"><span>信息出错请改正🐟</span></span></div>
+			<div><span style="margin-top: 0;">留言：</span><textarea name="" rows="5" cols="50" placeholder=""></textarea></div>
+			<div><span></span><input type="submit" value="SubmitForm" /></div>
+		</form>
+	</body>
+
+</html>

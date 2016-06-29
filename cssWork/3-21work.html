@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: content-box;
+				color: #8d8987;
+			}
+			
+			.floatlayout {
+				width: 100%;
+				overflow: hidden;
+				clear: both;
+			}
+			.flexR,.floatlayoutR{
+				width: 28%;
+				
+			}
+			.floatlayoutR div{
+				position: relative;
+				left: 50%;
+			}
+			.tableLayoutR div{
+				position: relative;
+				left: 52%;
+			}
+			
+			.flexL,.left {
+				width: 10%;
+			}
+			
+			.flexL img,.left img {
+				width: 100%;
+			}
+			
+			.center p {
+				margin-top: 0px;
+			}
+			
+			.flexC,.center {
+				width: 60%;
+				padding-left: 20px;
+			}
+			
+			.center p:nth-child(2) {
+				font-size: 0.8em;
+			}
+			
+			.center p:nth-child(1)>b {
+				color: #000;
+			}
+			
+			.right {
+				/*line-height: 40px;*/
+				width: 70px;
+				height: 20px;
+				/*background: green;*/
+				padding: 10px;
+				border: 1px solid green;
+				border-radius: 20%/50%;
+				margin-top: 4%;
+				margin-left: 10px;
+			}
+			
+			.right a {
+				font-size: 1em;
+				display: block;
+				text-align: center;
+				text-wrap: none;
+				text-decoration: none;
+			}
+			
+			.floatlayout>div {
+				float: left;
+			}
+			
+			span {
+				color: #3583bb;
+			}
+			
+			.tableLayout {
+				width: 100%;
+			}
+			
+			.tableLayout ul {
+				display: table;
+			}
+			
+			.tableLayout li {
+				display: table-cell;
+			}
+			
+			.tableLayout .center {
+				vertical-align: top;
+			}
+			
+			.tableLayout .tableLayoutR {
+				vertical-align: middle;
+				align-content: center;
+			}
+			
+			.tableLayout ul {
+				/*display: inline-block;*/
+				padding-left: 0px;
+				padding-top: 0px;
+			}
+			
+			.line {
+				width: 100%;
+				height: 0px;
+				border: 1px dotted darkgray;
+			}
+			
+			.first {
+				margin-top: 20px;
+				margin-bottom: 40px;
+			}
+			.flexLayout{
+				display: flex;
+				justify-content: space-around;
+			}
+			.flexR div{
+				position: relative;
+				left: 48%;
+				margin-top: 4%;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="first">
+				被以下专题收入，发现更多相似内容
+			</div>
+			<div class="floatlayout">
+				<div class="left"><img src="img/Snip20160321_3.png" /></div>
+				<div class="center">
+					<p><b>首页投稿</b></p>
+					<p>玩转简书的第一步，从这个专题开始。想上首页热门榜麽？好内容想被更多人来看到吗 来投稿吧！如果被拒也不要灰心啊，入选文章会进一个对...
+					</p>
+					<p><span>40000篇文章</span>-82213人关注</p>
+				</div>
+				<div class="floatlayoutR"><div class="right"><a href="#">添加关注</a></div></div>
+			</div>
+			<div class="line"></div>
+			<div class="tableLayout">
+				<ul>
+					<li class="left"><img src="img/Snip20160321_3.png" /></li>
+					<li class="center">
+						<p><b>首页投稿</b></p>
+						<p>玩转简书的第一步，从这个专题开始。想上首页热门榜麽？好内容想被更多人来看到吗 来投稿吧！如果被拒也不要灰心啊，入选文章会进一个对...
+						</p>
+						<p><span>40000篇文章</span>-82213人关注</p>
+					</li>
+					<li class="tableLayoutR">
+						<div class="right">
+							<a href="#">添加关注</a>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+			<div class="line"></div>
+			<!--<hr"/>-->
+			<div class="flexLayout">
+				<div class="flexL"><img src="img/Snip20160321_3.png" /></div>
+				<div class="flexC">
+					<p><b>首页投稿</b></p>
+					<p>玩转简书的第一步，从这个专题开始。想上首页热门榜麽？好内容想被更多人来看到吗 来投稿吧！如果被拒也不要灰心啊，入选文章会进一个对...
+					</p>
+					<p><span>40000篇文章</span>-82213人关注</p>
+				</div>
+				<div class="flexR">
+					<div class="right">
+						<a href="#">添加关注</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

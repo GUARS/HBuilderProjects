@@ -1,0 +1,12 @@
+.gcal-img img{
+	width: 100%;
+}
+.gcal{
+	background: white;
+	padding: 20px;
+	border-bottom: 1px solid #cccccc;
+}
+.gcal-info p{
+	color: #888888;
+	margin: 5px 0 ;
+}

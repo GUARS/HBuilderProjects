@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/**{
+			margin: 0;
+			padding: 0;
+		}*/
+			
+			.author {
+				clear: all;
+				overflow: hidden;
+				padding: 10px;
+			}
+			
+			.author * {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.author div {
+				float: left;
+			}
+			
+			.author span {
+				font-size: 0.8em;
+				background: #4b8ce4;
+			}
+			/*.numerList {
+				clear: all;
+				overflow: hidden;
+			}*/
+			
+			.numerList>div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid gray;
+			}
+			
+			.numerList>div * {
+				text-align: center;
+			}
+			
+			.numerList {
+				display: flex;
+				justify-content: space-around;
+			}
+			
+			body {
+				background: darkgrey;
+			}
+			
+			.aa {
+				width: 340px;
+				background: white;
+				padding: 10px;
+			}
+			
+			.aa>div {
+				margin-bottom: 20px;
+			}
+			
+			.p {
+				margin-top: 10px;
+			}
+			
+			.arctList {
+				padding: 10px;
+			}
+			
+			.firstArctL {
+				list-style: none;
+				clear: both;
+				overflow: hidden;
+				padding: 0;
+				margin-bottom: 0;
+			}
+			
+			.firstArctL li {
+				float: left;
+			}
+			
+			.firstArctL .leftImg {
+				width: 25%;
+			}
+			
+			.firstArctL .leftImg img {
+				width: 100%;
+			}
+			
+			.firstArctL .right {
+				margin-top: 2%;
+				width: 70%;
+			}
+			
+			.right a {
+				text-decoration: none;
+				color: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="aa">
+
+			<div class="author">
+				<div class="authorLeft"> <img src="img/Snip20160321_3.png" /></div>
+				<div class="authorright">
+					<p><b>小明</b> <span>青年作家</span></p>
+					<p class="p">为创业者提供最好的产品和服务</p>
+				</div>
+			</div>
+			<div class="numerList">
+				<div class="left">
+					<h2>26篇</h2>
+					<p>文章总数</p>
+
+				</div>
+				<div class="right">
+					<h2>26万</h2>
+					<p>总阅读量</p>
+				</div>
+			</div>
+
+			<div class="arctList">
+				<article>文章列表</article>
+				<hr>
+				<ul class="firstArctL">
+					<li class="leftImg"> <img src="img/Snip20160321_3.png" /></li>
+					<li class="right">
+						<div><a href="#"> 比充电宝还小的PaPa 手机投影，能撬动市场吗？</a></div>
+					</li>
+
+				</ul>
+				<ul class="firstArctL">
+					<li class="leftImg1">
+						<a href="#"><img style="float: left;" src="img/Snip20160321_3.png" /> 猎豹移动2015第四季度及2015年全年财报摘要：获批回购1亿美金股票 </a>
+					</li>
+					<li class="right1">
+						<div></div>
+					</li>
+
+				</ul>
+				<ul class="firstArctL">
+					<li class="leftImg"> <img src="img/Snip20160321_3.png" /></li>
+					<li class="right">
+						<div>
+							<a href="#"> 直击中小互联网企业痛点，程序员客栈推出短期雇佣功能
+							</a>
+						</div>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+	</body>
+
+</html>

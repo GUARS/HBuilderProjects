@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.testFlex .flex {
+				width: 100px;
+				height: 40px;
+				background: green;
+				/*float: left;*/
+			}
+			
+			.testFlex .flex1 {
+				width: 200px;
+			}
+			
+			.testFlex .flex:nth-of-type(2n-1) {
+				background: greenyellow;
+			}
+			
+			.testFlex {
+				width: 300px;
+				height: 300px;
+				border: 4px solid red;
+				display: flex;
+				/*控制子元素的排列顺序主要有row row-reverse column column-reverse*/
+				flex-direction: column-reverse;
+				/*设置容器当前元素内的元素是单行显示还是多行
+				 主要有 wrap wrap-reverse nowrap 为nowrap时会压缩子元素*/
+				/*flex-wrap: wrap;*/
+				/*同时设置flex-direction和flex-flow；*/
+				/*flex-flow: column nowrap;*/
+				/*设置子元素的对齐方式*/
+				justify-content: center;
+				/*justify-content: space-between;*/
+				/*justify-content: space-around;*/
+				/*定义在侧轴上的对齐方式 baseline和stretch未测试*/
+				/*align-items: center;*/
+				/*align-items: flex-start;
+				align-items: flex-end;
+				align-items: baseline;*/
+				/*align-items: stretch;*/
+				/*该属性不起作用*/
+				/*-webkit-align-content: space-around;*/
+			}
+			
+			.testFlex .flex1 {
+				/*定义项目的排列顺序值越小越靠前默认为0；*/
+				/*flex-grow: 1;*/
+				order: 1;
+			}
+			
+			.testFlex .flex {
+				height: 50px;
+			}
+			
+			.testFlex .flex {
+				/*flex-grow 属性定义项目的放大比例,默认为 0,即如果存在剩余 空间,也不放大。
+				如果所有项目的 flex-grow 属性都为 1,
+				则它们将等分剩余空间(如 果有的话)。
+				如果一个项目的 flex-grow 属性为 2,其他项目都为 1,
+				则 前者占据的剩余空间将比其他项多一倍。*/
+				/*flex-grow: 2;*/
+				/*空间不足时缩小该元素，默认值为1，如果所有子元素该属性的值都为1则等比例缩放
+				 如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小，
+				 负值无效 若全部为0则会溢出*/
+				/*flex-shrink: 0;*/
+				/*定义子元素在主轴上的大小，主轴由direction指定，默认值为auto*
+				/*flex-basis: auto;*/
+				/*flex-basis: 200px;*/
+				/*flex属性是flex-grow，flex-shrink和flex-basis的简写，
+				 * 默认值为 0 1 auto后两个属性可选*/
+				/*align-self属性允许单个元素与其他元素不一样的对齐方式，可覆盖align-items属性
+				默认值为auto表示继承父元素的align-items属性，如果没有父元素则等同于stretch*/
+				align-self: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="testFlex">
+			<div class="flex flex1">1</div>
+			<div class="flex flex2">2</div>
+			<div class="flex ">3</div>
+			<div class="flex flex4">4</div>
+			<div class="flex flex5">5</div>
+		</div>
+	</body>
+
+</html>

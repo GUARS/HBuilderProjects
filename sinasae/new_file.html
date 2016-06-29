@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+	<body>
+		<span id="test">aaa</span>
+		<span id="test1">aaa</span>
+		<script>
+		var a = $("#test");
+		var a1 = $("#test1");
+		a.click(function(){
+			$.ajax({
+				type:"get",
+//				url:"http://apis.baidu.com/qunar/qunar_train_service/suggestsearch?version=1.0&keyword=%E5%8C%97%E4%BA%AC",
+				url:"http://apis.baidu.com/qunar/qunar_train_service/s2ssearch?version=1.0&from=%E5%8C%97%E4%BA%AC&to=%E4%B8%8A%E6%B5%B7&date=2016-07-01",
+				beforeSend:function(req){
+					req.setRequestHeader("apikey","308231d18135c3c885706376d8f385f9")
+				},
+				success:function(data){
+					a1.append((JSON.stringify((data.data.trainList)[0])));			
+				}
+			});
+			
+		})
+	</script>
+	</body>
+	
+</html>

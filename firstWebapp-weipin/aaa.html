@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<!--该效果是：当文档内容不足以让footer
+保留在浏览器底部时让其保留在浏览器底部,超出时让他留在文档下面底部-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+			}
+			
+			.contaiter {
+				min-height: 100%;
+				padding-bottom: 60px;
+			}
+			
+			.content {
+				height:400px;
+				background: greenyellow;
+			}
+			
+			.contaiter:after {}
+			
+			header {
+				background: darkblue;
+				height: 40px;
+			}
+			
+			footer {
+				margin-top: -40px;
+				background: red;
+				height: 40px;
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!--<header></header>-->
+
+		<div class="contaiter">
+			<div class="content"></div>
+
+		</div>
+		<!--<hr style=" border:10px dotted red ; " />-->
+		<footer></footer>
+	</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				margin: 0;
+			}
+			
+			.list {
+				height: 500px;
+				width: 100px;
+				list-style: none;
+				padding: 0;
+				border: 1px solid red;
+			}
+			li{
+				
+			}
+			ul li:nth-child(1){
+				margin-top:25px ;
+			
+			}
+			
+			li>div:nth-child(1) {
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				border: 1px solid transparent;
+				text-align: center;
+			}
+			
+			li>div:nth-child(2) {
+				width: 100px;
+				height: 100%;
+				border: 1px solid red;
+				/*border: 1px solid transparent;*/
+			}
+			
+			.list li:hover .togg {
+				display: block;
+			}
+			
+			.list li:hover div:nth-child(1) {
+				border: 1px solid red;
+				border-right:1px solid #fff ;
+			}
+			
+			.togg {
+				display: none;
+				position: absolute;
+				left: 98px;
+				top: 0px;
+				z-index: -1;
+				color: green;
+				
+			}
+			
+			body:hover .togg {
+				display: none;
+			}
+			
+			ul {
+				position: relative;
+					z-index: 1;
+			}
+			
+			li {
+				display: block;
+				width: 100px;
+				margin-left: -1px;
+			}
+			pre{
+				background: #eeee99;
+				width: 100px;
+				height: 500px;
+			}
+			ul ,pre{
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<ul class="list">
+			<li>
+				<div>item1</div>
+				<div class="togg">1</div>
+			</li>
+			<li>
+				<div>item2</div>
+				<div class="togg">2</div>
+			</li>
+			<li>
+				<div>item3</div>
+				<div class="togg">3</div>
+			</li>
+			<li>
+				<div>item4</div>
+				<div class="togg">4</div>
+			</li>
+		</ul>
+		<pre>
+			123333333
+			123
+		</pre>
+	</body>
+
+</html>

@@ -1,0 +1,34 @@
+.content-main li{
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	justify-content: space-around;
+	background: white;
+	padding: 20px 0 30px;
+}
+.content-main li:nth-child(2){
+	margin: 14px 0;
+}
+.content-main li a{
+	-webkit-box-flex: 1.0;
+	flex-grow: 1;
+	text-align: center;
+	display: block;
+	width: 70px;
+
+}
+.content-main .img{
+	margin: 0 auto;
+	display: block;
+	width: 4em;
+	height: 4em;
+	margin-bottom: 5px;
+}
+.content-main .img img{
+	width: 100%;
+}
+.content-main *  {
+	color: black;
+	font-weight: 400;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<a href="http://tsmusic24.tc.qq.com/105909271.mp3" download="aaa.mp3">aa</a>
+	</body>
+	<script>
+
+	
+
+	
+	
+	window.domain="http://y.qq.com";
+	
+	$.ajax({
+			type:"post",
+			url:"http://y.qq.com/#type=song&mid=001yxUKs14LDNn&tpl=yqq_song_detail&play=0",
+			
+				success:function(data){
+					alert(data)
+//				a1.append((JSON.stringify((data.data.trainList)[0])));			
+				}
+		});
+	var b ="http://i.y.qq.com/v8/fcg-bin/fcg_play_single_song.fcg?songmid=001yxUKs14LDNn&tpl=yqq_song_detail&play=0jsoncallback=?"
+	var a = document.querySelector("body");
+	a.setAttribute("current-play",true)
+	$.getJSON(b, function(data) {
+				
+			})
+	function jsoncallback(data){
+		data.toString()
+	}
+	function getImg(id){
+		var id_arr = id.split("");
+		var id_length=id_arr.length;
+		var dir = id_arr[id_length-2]+"/"+id_arr[id_length-1];
+		return dir;
+	}
+	
+		
+	</script>
+
+</html>

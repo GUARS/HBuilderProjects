@@ -1,0 +1,21 @@
+.jianjie-h h2,.mark{
+	color: #FB762B;
+	
+}
+.line{
+	margin-top: 10px;
+	width: 100%;
+	height: 1px;
+	border-bottom:1px dashed #CCCCCC ;
+}
+.jianjie{
+	padding: 10px;
+	line-height: 25px;
+}
+.jianjie-h,.jianjie-co p{
+	margin-bottom: 20px;
+	color: #888888;
+}
+.jianjie-f{
+	margin: 20px 0;
+}

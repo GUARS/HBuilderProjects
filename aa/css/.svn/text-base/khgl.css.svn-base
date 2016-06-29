@@ -1,0 +1,35 @@
+.kehu-item{
+	width: 100%;
+	/*height: 180px;*/
+	background: url(../img/SubImg/kehubg.png) center center no-repeat;
+	/*background-size: cove;*/
+	/*padding: 20px;*/
+	margin-top:20px ;
+	display: table;
+	background-size: 100% 100% ;
+}
+.kehu-d,.custType{
+	display: table-cell;
+}
+.kehu-d{
+	padding: 10px  0 0 30px ;
+}
+.kehu-d li{
+	margin-bottom: 10px;
+	color: #aaaaaa;
+	font-size: 0.9em;
+}
+.kehu-d .kehuname{
+	font-size: 1em;
+	color: #888;
+	
+}
+.custType{
+	font-size: 1.25em;
+	vertical-align: middle;
+	/*text-align: right;*/
+}
+.custType-item{
+	color:white;
+
+}

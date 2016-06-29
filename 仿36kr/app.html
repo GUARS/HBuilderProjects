@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<title></title>
+		<style>
+		body{
+			font-size: 1em;
+		}
+			.container {
+				width: 100%;
+			}
+			.container ul {
+				margin: 0 auto;
+				list-style: none;
+				width: 80%;
+				height: 1000px;
+			}
+			.container ul li:after {
+				clear: both;
+				content: "";
+				display: table;
+			}
+			.container ul li div{
+				
+			}
+			
+			* {
+				box-sizing: border-box;
+			}
+			
+			div[class$=right] {
+				position: relative;
+			}
+			
+			div[class$=right]:before {
+				position: absolute;
+				content: "";
+				width: 1px;
+				border: 1px solid red;
+				height: 300px;
+				top: 0px;
+				left: -20px;
+			}
+			div[class$=right]:after {
+				position: absolute;
+				content: url(img/123.png);
+				width: 1px;
+				/*border: 1px solid red;*/
+				height: 300px;
+				top: 62px;
+				left: -50px;
+			}
+			@media only screen and (min-width:500px) {
+				.toleft-yidong {
+					position: absolute;
+					left: -125%;
+					width: 100%;
+					color: red;
+				}
+				
+				.container ul li div {
+					/*padding: 5%;*/
+					margin: 5%;
+					
+					float: left;
+				}
+				.container div:first-child {
+					width: 40%;
+					height: 200px;
+					background: gold;
+				}
+				.container div:last-child {
+				width: 40%;
+				height: 200px;
+				background: green;
+			}
+			}
+			
+			@media only screen and (max-width:500px) {
+				
+					.container div:last-child {
+				
+				height: 200px;
+				background: green;
+			}
+				
+				div[class$=left
+				] {
+					display: none;
+				}
+				div[class$=right
+				]{
+					width:500px;
+				}
+				.container ul{
+					width: 100%;
+					margin: 0 auto;
+				}
+				
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<ul>
+				<li>
+					<div class="first-left "></div>
+					<div class="first-right"><span class="toleft-yidong">春风流水去，夏日春江红</span><span class="">时间</span></div>
+				</li>
+				<li>
+					<div class="second-left "></div>
+					<div class="second-right">春风流水去，夏日春江红<span class="toleft-yidong">时间</span></div>
+				</li>
+				<li>
+					<div class="third-left "></div>
+					<div class="third-right"><span class="toleft-yidong">春风流水去，夏日春江红</span><span>时间</span></div>
+				</li>
+				<li>
+					<div class="four-left"></div>
+					<div class="four-right">春风流水去，夏日春江红<span class="toleft-yidong">时间</span></div>
+				</li>
+			</ul>
+
+		</div>
+	</body>
+
+</html>

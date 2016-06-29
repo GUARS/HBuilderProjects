@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+			box-sizing: border-box;
+		}
+			
+			.left_triangle_frame::before{
+				position: absolute;
+				border-top: 10px solid transparent;
+				border-right: 10px solid red;
+				border-bottom: 10px solid transparent;
+				content: "";
+				left: -10px;
+				top: 10px;
+			}
+			.left_triangle_frame::after{
+				top: 10px;
+				position: absolute;
+				left: -9px;
+				border-top: 10px solid transparent;
+				border-right: 10px solid white;
+				border-bottom: 10px solid transparent;
+				content: "";
+			}
+			
+			.left_triangle_frame {
+				
+				position: relative;
+				
+				
+			}
+			.list_content{
+				width: 100px;
+				height: 100px;
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="left_triangle_frame list_content">
+
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			a {
+				text-decoration: none;
+				color: rgba(0, 0, 0, 0.5);
+			}
+			
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			.hiden {
+				opacity: 0;
+			}
+			
+			.clearfix::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			
+			.test {
+				display: inline-block;
+				text-decoration: none;
+				background: #64c3ff;
+				color: white;
+				padding: 20px;
+				margin-left: 20px;
+				border-radius: 25%;
+				box-shadow: -.0em -.5em 0px dodgerblue inset;
+			}
+			
+			.test:hover {
+				position: relative;
+				top: 0.2em;
+				box-shadow: -.0em -.3em 0px dodgerblue inset;
+				transition: all 0.3s;
+			}
+			
+			.data-list {
+				border: 1px solid black;
+			}
+			
+			.data-list>ul {
+				list-style: none;
+				/*display: table-column;*/
+				display: table;
+				width: 100%;
+				padding: 0;
+				position: relative;
+			}
+			
+			.data-list>ul::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 10px;
+				bottom: 0;
+				z-index: 2;
+				border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+			}
+			
+			.data-list> ul li {
+				display: table-cell;
+				border-bottom: 2px solid transparent;
+				text-align: center;
+			}
+			
+			.data-list> ul li:hover {
+				border-bottom: 2px solid blue;
+			}
+			
+			.data-list .target {
+				display: none;
+			}
+			
+			.data-list .data-active {
+				display: block;
+			}
+			
+			.data-list .target ul {
+				width: 100%;
+				display: inline-block;
+			}
+			
+			.data-list .target ul li {
+				display: table;
+				width: 100%;
+			}
+			
+			.data-list .target ul a {
+				display: table-cell;
+				text-align: center;
+			}
+			
+			.data-list .target ul a:hover {
+				background: deepskyblue;
+			}
+			
+			.data-list .target ul span {
+				display: table-cell;
+				width: calc(100% / 7);
+				text-align: center;
+			}
+			
+			.data-list {
+				position: absolute;
+				display: none;
+				width: 400px;
+				top: 40px;
+				background: white;
+				z-index: 1;
+			}
+			
+			.first {
+				position: relative;
+			}
+			
+			.input {
+				width: 400px;
+				height: 40px;
+			}
+			
+			.active {
+				display: block;
+			}
+			.close{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>第一题</h1>
+		<div class="first">
+			<input class="input" type="text" />
+			<div class="data-list">
+				<div class="first-header clearfix">
+					<span class="close" style="float: right;">关闭</span>
+					<h5 style="opacity: 0.5;">
+					支持中文/拼音/简拼输入
+				</h5>
+				</div>
+
+				<ul>
+					<li class="item" data-toggle="#item1">f1</li>
+					<li class="item" data-toggle="#item2">f2</li>
+					<li class="item" data-toggle="#item3">f3</li>
+					<li class="item" data-toggle="#item4">f4</li>
+					<li class="item" data-toggle="#item5">f5</li>
+					<li class="item" data-toggle="#item6">f6</li>
+					<li class="item" data-toggle="#item7">f7</li>
+				</ul>
+				<div class="content">
+					<div class="target data-active" id="item1">
+						<div>
+
+							<ul>
+								<li>
+									<span>T</span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span class="hiden">aa</span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span></span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+							</ul>
+
+						</div>
+						<div>
+
+							<ul>
+								<li>
+									<span>W</span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span></span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span></span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+							</ul>
+
+						</div>
+						<div>
+
+							<ul>
+								<li>
+									<span>X</span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span></span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+								<li>
+									<span></span>
+									<a href="">a1</a>
+									<a href="">a2</a>
+									<a href="">a3</a>
+									<a href="">a4</a>
+									<a href="">a5</a>
+									<a href="">a6</a>
+								</li>
+							</ul>
+
+						</div>
+
+					</div>
+					<div class="target" id="item2">f2
+
+					</div>
+					<div class="target" id="item3">f3</div>
+					<div class="target" id="item4">f4</div>
+					<div class="target" id="item5">f5</div>
+					<div class="target" id="item6">f6</div>
+					<div class="target" id="item7">f7</div>
+
+				</div>
+				<script type="text/javascript">
+					var item = $(".item");
+					var ins = $(".input");
+				
+					ins.focus(function() {
+						$(".data-list").addClass("active");
+					})
+					item.click(function() {
+						$($($(this).attr("data-toggle")).siblings(".target")).removeClass("data-active");
+						$($(this).attr("data-toggle")).addClass("data-active");
+					})
+					$(".close").click(function(){
+						
+						$(".data-list").removeClass("active");
+					})
+				</script>
+
+			</div>
+
+		</div>
+		<h1>第三题</h1>
+		<div class="second">
+			<a href="" class="test">111</a>
+			<a href="" class="test">222</a>
+			<a href="" class="test">333</a>
+		</div>
+
+	</body>
+
+</html>

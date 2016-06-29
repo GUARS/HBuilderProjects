@@ -1,0 +1,62 @@
+.content-h{
+	background: url(../img/SubImg/grxxbg@2x.png) center center no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 300px;
+	text-align: center;
+	padding-top:55px ;
+	
+}
+.content-h img{
+	width: 85px;
+	height: 85px;
+}
+.content-h div{
+	display: inline;
+	vertical-align: middle;
+}
+.username{
+	font-size: 1.5em;
+	margin: 10px 0;
+	
+}
+.exit{
+	display:inline-block;
+	font-size: 1.25em;
+	background: #006db4;
+	color: white;
+	padding: 5px 25px;
+	border-radius: 5px;
+}
+.li-left{
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 10px;
+	width: 24px;
+	height: 24px;
+}
+.li-left img{
+	width: 100%;
+}
+.content-f li{
+	padding:15px;
+	margin: 20px 0;
+	background: white;
+	border-radius: 10px;
+	
+}
+.li-center ,.li-right{
+	color: #888;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 1.5em;
+	line-height: 24px;
+	
+}
+.li-right{
+	float: right;
+}
+.content-f ul{
+	margin: 20px 0 60px;
+}
+

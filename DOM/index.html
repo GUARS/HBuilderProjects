@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css" media="screen">
+				* {
+					margin: 0;
+					padding: 0;
+					box-sizing: border-box;
+				}
+				
+				ul {
+					list-style: none;
+				}
+				
+				.carousel {
+					overflow: hidden;
+					position: relative;
+				}
+				
+				.items {
+					width: 400%;
+					transition: transform 1s;
+				}
+				
+				.items::after {
+					display: table;
+					content: '';
+					clear: both;
+				}
+				
+				.items li {
+					width: 25%;
+					float: left;
+				}
+				
+				.items li img {
+					width: 100%;
+				}
+				
+				.points {
+					position: absolute;
+					left: 50%;
+					bottom: 10px;
+					transform: translateX(-50%);
+				}
+				
+				.points li {
+					float: left;
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background-color: #ccc;
+					margin: 5px;
+				}
+				
+				.points li.active {
+					background-color: #fff;
+				}
+			</style>
+	</head>
+
+	<body>
+		<div id="carousel" class="carousel">
+			
+			<ul id="items"  class="items" style="transform: translate3d(0,0,0);">
+				<li><img src="img/banner-1.png" alt="" /></li>
+				<li><img src="img/banner-2.png" alt="" /></li>
+				<li><img src="img/banner-3.png" alt="" /></li>
+			<li><img src="img/banner-1.png" alt="" /></li>
+			</ul>
+			<ul id="points" class="points">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script>
+		var container = document.getElementById("carousel")
+			var index=0;
+		setInterval(function(){
+			index=index+1==4?0:index+1;
+			if(index==0){
+				
+				container.firstElementChild.style.transform="translate(-"+index/4.0*100+"%,0)";
+			}
+		
+			container.firstElementChild.style.transform="translate3d(-"+index/4.0*100+"%,0,0)";
+			var point_list=container.lastElementChild.children;
+			 point_list[0].classList.remove('active');
+			 point_list[1].classList.remove('active');
+			 point_list[2].classList.remove('active');
+			 point_list[index].classList.add('active');
+
+		},3000)
+			
+		</script>
+
+	</body>
+
+</html>

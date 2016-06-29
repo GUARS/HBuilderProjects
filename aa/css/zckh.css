@@ -1,0 +1,22 @@
+.xieyi{
+	font-size: 0.8em;
+	padding: 0 20px;
+	
+}
+.xieyi img{
+	vertical-align: middle;
+}
+.regi-item-pos i{
+	top: -50%;
+	right: calc(20%);
+	font-size: 1.5em;
+	
+}
+input[type=radio]{
+	height: 1.5em;
+	color: red;
+	padding: 20px;
+	
+}
+
+

@@ -1,0 +1,31 @@
+.form-content{
+	font-size: 1.5em;
+}
+.form-content li{
+	background: white;
+	padding:20px 10px;
+border-bottom: 1px solid #EEEEEE;
+}
+.form-content span:first-child{
+	display: inline-block;
+	text-align: right;
+	width: 41%;
+	
+	
+}
+.form-content input[type=text]{
+	width: calc(59% - 20px);
+	outline: 0;
+	border: 0;
+	font-size: 1em;
+	
+}
+.form-sub{
+color: #D3D3D3;
+	padding: 10px;
+	background: #006DB4;
+	font-size: 1.5em;
+	width: calc(100% - 20px*2);
+	margin: 20px;
+	border-radius: 10px;
+}

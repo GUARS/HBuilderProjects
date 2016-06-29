@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8" />
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			@font-face {
+				font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+				;
+				src: url();
+			}
+			
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				/*opacity: 0.8;*/
+			}
+			
+			ul {
+				list-style: none;
+				padding: 0px;
+				display: block;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #67b9f8;
+			}
+			
+			body {
+				background: #e4e5e7;
+			}
+			
+			h2,
+			p {
+				margin: 30px 0;
+				line-height: 27px;
+			}
+			
+			p {
+				font-size: 19px;
+			}
+			.cen_nav,.lastsoso{
+			padding-top: 5px;	
+			}
+			
+			.container {
+				margin: 0 auto;
+			}
+			
+			.clearfix::after {
+				clear: both;
+				display: table;
+				content: "";
+			}
+			
+			.header {
+				margin: 0;
+				padding-top: 15px;
+				clear: both;
+				overflow: hidden;
+				background: white;
+			}
+			
+			.header .cen_nav {
+				width:46%;
+			}
+			
+			.header .logo,
+			header .lastsoso {
+				width: 22%;
+			}
+			
+			.logo img {
+				width: 35%;
+			}
+			
+			.logo {
+				padding-left: 13%;
+				
+			}
+			
+			.header ul,
+			.header .cen_nav div ul {
+				clear: both;
+				overflow: hidden;
+				/*此处应该注意下可能会出错*/
+			}
+			
+			.header>ul>li,
+			.header .cen_nav>div>ul>li {
+				float: left;
+			}
+			
+			.header .cen_nav div>ul>li {
+				display: block;
+				margin-right: 4%;
+			}
+			
+			.header .cen_nav .cen_nav_list>li>a {
+				font-size: 1em;
+				color: black;
+			}
+			
+			.header .cen_nav .cen_nav_list>li:first-child>a {
+				display: block;
+				font-weight: bold;
+				/*padding-bottom: 20px;*/
+			}
+			
+			.header.cen_nav_list>div>ul>li:first-child {
+				border-bottom: 1px solid gold;
+				padding-bottom: 20px;
+			}
+			
+			.header .cen_nav div ul li:nth-child(n+2) a:hover {
+				color: #3c6ff3;
+			}
+			
+			.cen_nav hr {
+				width: 100%;
+				border-bottom: 2px solid dodgerblue;
+			}
+			/**********下拉列表及其开关**************/
+			
+			.list::before {
+				content: "";
+				position: absolute;
+				top: -10px;
+				margin-left: 15%;
+				left: -5px;
+				border-bottom: 10px solid gray;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				z-index: 2;
+			}
+			
+			.list::after {
+				content: "";
+				position: absolute;
+				top: -9px;
+				left: -4px;
+				margin-left: 15%;
+				border-bottom: 9px solid white;
+				border-left: 9px solid transparent;
+				border-right: 9px solid transparent;
+				z-index: 2;
+			}
+			
+			.list {
+				/*top:10px;*/
+				position: relative;
+				display: none;
+				/*z-index: 2;*/
+			}
+			
+			.list_content {
+				background: white;
+				top: 60px;
+				min-width: 150px;
+				height: auto;
+				border: 1px solid gray;
+				position: absolute;
+				z-index: 2;
+				padding: 10px;
+			}
+			/*.toggle-cottent{
+				position: relative;
+			}	*/
+			
+			.toggle:hover~.list {
+				display: block;
+				/*background: red;*/
+			}
+			
+			.toggle:hover .list {
+				display: block;
+			}
+			
+			.toggle {
+				/*position: relative;*/
+				height: 40px;
+			}
+			
+			.list_item li {
+				border-bottom: 1px solid gray;
+				padding: 10px;
+			}
+			/**********下拉列表及其开关**************/
+			/**********带左三角的边框*******/
+			
+			.left_triangle_frame::before {
+				position: absolute;
+				border-top: 5px solid transparent;
+				border-right: 5px solid gray;
+				border-bottom: 5px solid transparent;
+				content: "";
+				left: -5px;
+				top: 5px;
+			}
+			
+			.left_triangle_frame::after {
+				top: 5px;
+				position: absolute;
+				left: -4px;
+				border-top: 5px solid transparent;
+				border-right: 5px solid white;
+				border-bottom: 5px solid transparent;
+				content: "";
+			}
+			
+			.left_triangle_frame {
+				width: 20px;
+				height:20px;
+				border: 1px solid gray;
+				position: relative;
+			}
+			/**********带左三角的边框*******/
+			
+			.header .lastsoso ul li {
+				float: left;
+				padding: 0 10px;
+			}
+			
+			span.img {
+				/*display: block;*/
+				width: 90px;
+				height: 90px;
+				float: left;
+			}
+			
+			.lastsoso span {
+				float: left;
+			}
+			
+			.lastsoso span img {
+				width: 100%;
+			}
+			
+			.lastsoso span button {
+				height: 40px;
+				width: 100%;
+				background: #93bfde;
+				color: white;
+				display: block;
+				border-radius: 5px;
+				padding: 3px;
+				margin-bottom: 10px;
+			}
+			
+			.lastsoso ul li a {
+				font-size: 1em;
+			}
+			
+			.lastsoso>div>ul>li:nth-last-of-type(1) a {
+				color: #4294ce;
+				font-size: 1em;
+				/*font-weight: 800;*/
+			}
+			
+			.lastsoso a:hover {
+				color: #4294ce;
+			}
+			
+			.lastsoso_form {
+				padding: 10px;
+			}
+			
+			.lastsoso input[type=text] {
+				width: 150px;
+				height: 38px;
+				color: #4253ce;
+			}
+			
+			.lastsoso button {
+				width: 38px;
+				height: 38px;
+				color: #4294ce;
+				background-color: white;
+			}
+			/******-------------------------------------*******/
+			
+			.container {
+				clear: both;
+				overflow: hidden;
+				width: 1400px;
+			}
+			
+			.container .left {
+				width: 333px;
+				/*background: #fff;*/
+				/*height: 500px;*/
+			}
+			
+			.container .right {
+				width: 814px;
+				/*height: 400px;*/
+			}
+			
+			.container .left,
+			.container .right {
+				float: left;
+				margin: 30px;
+				/*border: 1px solid #396BEB;*/
+			}
+			
+			.right .wenzi {
+				background: #fff;
+			}
+			
+			.container .right .wenzi p {
+				text-align: justify;
+			}
+			
+			.wenzi img {
+				width: 100%;
+			}
+			
+			.container .right .wenzi p img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				/*vertical-align: baseline;*/
+			}
+			
+			.container .right .wenzi .author_ri a,
+			.container .right .wenzi .author_ri span {
+				font-size: 12px;
+			}
+			
+			.container .right .wenzi .author_ri a {
+				color: #67b9f8;
+			}
+			
+			.container .right .wenzi .author_ri> span {
+				height: 25px;
+				position: relative;
+				top: -5px;
+			}
+			
+			.container .right .wenzi .author_ri> span>span {
+				color: gray;
+			}
+			
+			.container .right .wenzi {
+				padding: 40px;
+			}
+			
+			.shang {
+				text-align: center;
+				/*position: relative;*/
+			}
+			
+			.shang span {
+				display: inline-block;
+				background: #f6b532;
+				border-radius: 50%;
+				padding: 25px;
+				font-size: 1.8em;
+			}
+			
+			.shang img {
+				width: 100px;
+				height: auto;
+			}
+			
+			.lable a {
+				display: inline-block;
+				margin: 0 5px;
+				padding: 4px 5px;
+				color: white;
+				background: #1E90FF;
+				border-radius: 5%/10%;
+			}
+			
+			.thumb {
+				border: 1px solid #eaeaeb;
+				background: #eaeaeb;
+				/*display: inline-block;*/
+				color:#abd2ff ;
+				padding: 5px;
+				border-radius: 50%;
+			}
+			
+			hr {
+				margin: 10px auto;
+			}
+			
+			.toogle_position {
+				position: relative;
+				display: inline-block;
+			}
+			
+			.list_block {
+				position: relative;
+				display: inline-block;
+				width: 25px;
+				height: 27px;
+				padding: 8px;
+				margin: 0 6px;
+			}
+			
+			.zanAnshare::after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+			
+			.zanAnshare .share {
+				float: right;
+			}
+			
+			.share_cir {
+				display: inline-block;
+				/*width: 30px;*/
+				border: 1px solid #eaeaeb;
+				/*background: #f7e1e6;*/
+				border-radius: 50%;
+				padding: 5px;
+				color: white;
+				/*margin-right: 5px;*/
+			}
+			
+			.xqbd {
+				margin-top: 20px;
+				background: white;
+				height: 100px;
+				padding-left: 40px;
+				line-height: 100px;
+				/*width: 200px;*/
+			}
+			
+			.comments {
+				background: white;
+				padding: 10px;
+				margin: 10px 0;
+			}
+			
+			.comments p {
+				margin: 10px 30px;
+				padding: 0;
+				line-height: 20px;
+				font-size: 1.1em;
+			}
+			
+			.comments .login_a {
+				line-height: 20px;
+				font-size: 1em;
+			}
+			
+			.container .left .authorAnewacr {
+				padding: 10px;
+				background: #FFFFFF;
+			}
+			
+			.container .left .author-info div {
+				float: left;
+			}
+			
+			.author-info {
+				padding-top: 50px;
+				padding-left: 14px;
+			}
+			
+			.author-info .author_img {
+				width: 79px;
+			}
+			
+			.author-info .author_img img {
+				border-radius: 50%;
+				width: 100%;
+			}
+			
+			.author_infoR ul li {
+				/*display: block;*/
+				padding: 0 0 14px 10px;
+			}
+			
+			.author_infoR ul li a {
+				font-size: 19px;
+				color: #63a9f7;
+			}
+			
+			.author_infoR ul li a:hover {
+				color: #1E90FF;
+			}
+			
+			.author-info ul li span {
+				padding-left: 5px;
+			}
+			
+			.title_num {
+				margin-bottom: 50px;
+				padding-left: 31px;
+			}
+			
+			.title_num ul li span {
+				display: block;
+				margin-top: 10px;
+				text-align: center;
+			}
+			
+			.title_num ul {
+				margin-left: 20px;
+			}
+			
+			.title_num ul li {
+				float: left;
+				padding: 20px 20px 0 0;
+			}
+			
+			.title_num ul li>span {
+				border: 1px solid #e3e3e3;
+				font-size: 1.5em;
+				padding: 12px;
+			}
+			
+			.title_num .arc-total {
+				font-size: 0.7em;
+			}
+			
+			.author_infoR li span {
+				padding: 3px;
+				margin-left: 3px;
+				background: #7eb6dd;
+				font-size: 10px;
+				color: ;
+			}
+			
+			.new_arc {
+				height: 380px;
+			}
+			
+			.new_arc img {
+				/*display: inline-block*/
+				width: 80px;
+				height: 80px;
+				margin-left: 2px;
+				/*float: left;*/
+			}
+			
+			.new_arc span {
+				width: 190px;
+				height: 80px;
+				float: right;
+				line-height: 21px;
+				font-size: 15px;
+			}
+			
+			.new_arc li {
+				margin-top: 5px;
+				padding: 5px;
+			}
+			
+			.new_arc .more {
+				margin-top: 20px;
+				text-align: right;
+			}
+			
+			.line {
+				margin-top: 20px;
+			}
+			
+			.line::before {
+				content: "";
+				display: table;
+				width: 270px;
+				border-bottom: 1px solid #e3e3e3;
+			}
+			
+			.line::after {
+				content: "最新文章";
+				position: relative;
+				background: white;
+				top: -10px;
+				font-weight: bold;
+			}
+			
+			.left>div {
+				margin-bottom: 20px;
+			}
+			
+			.left .huodong {
+				/*background: #fff;*/
+				padding: 10px;
+				width: 331px;
+			}
+			
+			.left .huodong img {
+				width: 100%;
+			}
+			
+			.left .ydn {
+				background: white;
+				padding: 10px;
+			}
+			
+			.left .ydn img {
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.left .ydn::before {
+				display: table;
+				content: "赞助商链接";
+				height: 40px;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			
+			.hot_arc {
+				background: #fff;
+				padding-left: 10px;
+			}
+			
+			.hot_arc ul li {
+				margin-top: 20px;
+				font-size: 14px;
+				line-height: 23px;
+			}
+			
+			.left .hot_arc img {
+				width: 50px;
+				height: 50px;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.left .hot_arc::before {
+				display: table;
+				content: "热门文章";
+				height: 40px;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			
+			.left .detail .detail_h {
+				padding: 0 10px;
+			}
+			
+			.left .detail .detail_h li {
+				background: #efefef;
+				float: left;
+				padding: 23px;
+				font-size: 1.2em;
+				color: ;
+			}
+			
+			.detail .detail_con {
+				margin: 0 10px;
+				background: white;
+			}
+			
+			.detail .detail_con .link_a a {
+				display: inline-block;
+				background: #d3ecff;
+				margin: 5px;
+				padding: 2px;
+			}
+			
+			.detail .detail_con .news_list {
+				padding: 5px;
+			}
+			
+			.detail .detail_con .news_list ul li {}
+			
+			.detail .detail_con .news_list ul li {
+				height: 80px;
+				font-size: 0.8em;
+				position: relative;
+			}
+			/*-------------------制作列表边线-----------*/
+			
+			.detail .detail_con .news_list ul li::after {
+				position: absolute;
+				content: "";
+				border: 6px solid #1E90FF;
+				left: -11px;
+				top: 0px;
+				border-radius: 50%;
+			}
+			
+			.detail .detail_con .news_list ul {
+				border-left: 1px solid darkgray;
+				margin-left: 10px;
+				padding-left: 5px;
+			}
+			
+			.detail .detail_con .news_list ul li {
+				padding-left: 10px;
+			}
+			/*.detail .detail_con .news_list ul::before {
+				position: absolute;
+				display: table;
+				content: "";
+				height: 100px;
+				border-left: 1px solid gray;
+				left: 5px;
+				
+				background: red;
+			}*/
+			/*-------------------制作列表边线-----------*/
+			
+			.news_list li {
+				border-bottom: 1px solid gainsboro;
+				padding-bottom: 100px;
+			}
+			
+			.news_list p {
+				/*padding: 5px;*/
+				margin-top 0;
+				line-height: 1;
+			}
+			
+			.ed_list,
+			.zixun_list,
+			.next_list {
+				overflow-y: scroll;
+				height: 500px;
+			}
+			
+			.next_list-num {
+				display: inline-block;
+				width: 40px;
+				/*margin-top: -5px;*/
+				height: 40px;
+				border: 1px solid darkgoldenrod;
+			}
+			
+			.next_list-num i {
+				text-align: center;
+				display: block;
+				padding-top: 5px;
+			}
+			
+			.next_list-num span {
+				display: block;
+				/*border: 1px solid darkcyan;*/
+				margin-top: -5px;
+				text-align: center;
+			}
+			
+			.next_list_center {
+				margin: 0 0 0 10px;
+				width: 200px;
+			}
+			
+			.next_list_center p {
+				margin: 2px 2px 4px 4px;
+				padding-bottom: 0;
+				line-height: 1;
+				font-size: 1em;
+			}
+			
+			.next_list_center p:first-child {
+				font-size: 1.2em;
+				color: #00FFFF;
+			}
+			
+			.next_list_time {
+				width: 50px;
+				margin-left: 10px;
+				/*border: 1px solid red;*/
+				color: gray;
+				font-size: 0.8em;
+			}
+			
+			.next_list_item>span {
+				float: left;
+			}
+			
+			.next_list_item {
+				padding-top: 20px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid gainsboro;
+			}
+			/**---------------------------------*/
+			
+			.ed_list_item {
+				padding: 10px 0;
+			}
+			
+			.ed_list_item img {
+				float: left;
+				width: 30px;
+				border-radius: 50%;
+			}
+			
+			.ed_list_item span {
+				display: inline-block;
+				margin: 0 10px;
+				/*margin-top: 15px;*/
+				padding-top: 10px;
+				height: 20px;
+				/*line-height: 20px;*/
+			}
+			
+			.ed_list_item p {
+				line-height: 15px;
+			}
+			
+			.ed_list_item p:first-child {
+				color: gray;
+				font-size: 0.8em;
+			}
+			
+			.ed_list_item p:last-child {
+				font-size: 1em;
+			}
+			
+			.ed_list_item {
+				border-bottom: 1px solid gray;
+			}
+			
+			.krprofile {
+				width: 100%;
+				height: 40px;
+				background: #d6d9df;
+				margin: 10px auto;
+				padding: 10px 100px;
+			}
+			
+			.krprofile a {
+				color: #6d6d6d;
+			}
+			
+			.krprofile span:first-child {
+				float: left;
+			}
+			
+			.krprofile span:last-child {
+				float: right;
+			}
+			
+			.krprofile span:last-child a {
+				display: inline-block;
+				margin-right: 20px;
+			}
+			
+			.footer {
+				padding-top: 40px;
+				padding-left: 230px;
+				/*padding-right: 230px;*/
+				background: #22262a;
+				font-size: 0.8em;
+			}
+			
+			.footer a {
+				color: #4da4e2;
+			}
+			
+			.footer a:hover {
+				color: #c4c4c4;
+			}
+			
+			.footer *:not(a) {
+				color: #c4c4c4;
+			}
+			
+			.footer .footer-header>div {
+				margin-left: 40px;
+			}
+			
+			.footer .footer-header-left img {
+				width: 20px;
+				height: 20px;
+			}
+			
+			.footer .footer-header-left p {
+				margin-left: 0;
+			}
+			
+			.footer-header-center {
+				width: 400px;
+			}
+			
+			.footer-header-center h2 {
+				margin-top: 0;
+			}
+			
+			.footer-header-center img {
+				width: 60px;
+				margin: 5px;
+			}
+			
+			.footer .footer-header>div {
+				float: left;
+			}
+			
+			.footer-footer img {
+				height: 14px;
+			}
+			
+			.footer-footer {
+				padding: 20px 0;
+				padding-left: 265px;
+				font-size: 14px;
+				background: #1b1e22;
+				color: white;
+			}
+			
+			.footer-footer i {
+				background: #698745;
+			}
+			
+			.footer-footer div {
+				float: left;
+				margin-right: 200px;
+			}
+			
+			.fixed {
+				position: fixed;
+				bottom: 40px;
+				right: 80px;
+				background: white;
+			}
+			
+			.fixed span {
+				display: block;
+				padding: 10px 10px 5px;
+				border-bottom: 1px solid #999999;
+			}
+			
+			.fixed i {
+				font-size: 1.4em;
+			}
+			
+			.fixed-toggle {
+				position: relative;
+			}
+			
+			.fixed-content-header {
+				background: #efefef;
+			}
+			
+			.fixed-content-header ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				font-size: 20px;
+				/*float: left;*/
+			}
+			
+			.fixed-content {
+				width: 390px;
+				height: 220px;
+				background: #e4e4e4;
+				top: -220px;
+				left: -400px;
+				position: absolute;
+			}
+			
+			.kr36_fix img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			.kr36_fix div {
+				padding: 20px;
+				width: 50%;
+				float: left;
+			}
+			
+			.fixed-content {
+				display: none;
+			}
+			
+			.fixed-toggle:hover .fixed-content {
+				display: inline-block;
+			}
+			
+			.detail_con_item {
+				display: none;
+			}
+			
+			.fixed-content-content-item {
+				display: none;
+			}
+			
+			.active_test {
+				display: block;
+			}
+			
+			.kehuduan .list_content {
+				padding: 10px;
+			}
+			.shang .list_content{
+				top:90px;
+				left:20px;
+			}			
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="header">
+			<ul>
+				<li class="logo"><img src="img/logo.png" alt="" /></li>
+				<li class="cen_nav">
+					<div>
+						<ul class="cen_nav_list">
+							<li><a href="">资讯</a>
+
+							</li>
+							<li><a href="">股权投资</a></li>
+							<li><a href="">融资</a>
+							</li>
+							<li class="toggle">
+								<a href="">我是创业者</a>
+
+								<div class="list list_content">
+									<ul class="list_item">
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+									</ul>
+								</div>
+
+							</li>
+							<li class="toggle"><a href="">我是创业者</a>
+								<div class="list list_content">
+									<ul class="list_item">
+										<li><a href="">我是创业者</a></li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+										<li>我是创业者</li>
+									</ul>
+								</div>
+							</li>
+
+							<li class="toggle"><a href="">发现</a>
+								<div class="list list_content">
+									<ul class="list_item">
+										<li>12</li>
+										<li>434</li>
+										<li>124</li>
+										<li>qwrrqw</li>
+										<li>qwrq</li>
+										<li>wqqwr</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+
+				</li>
+				<li class="lastsoso">
+					<ul>
+						<li class="toggle"><a href="">搜索</a>
+							<div class="list list_content">
+								<div class="lastsoso_form">
+									<input type="text" id="" value="" />
+									<button><i class="fa fa-search"></i></button>
+								</div>
+
+							</div>
+						</li>
+						<li class="toggle kehuduan"><a href="">客户端</a>
+							<div class="list list_content">
+								<div>
+									<span class="img">
+								<img src="img/ewsiiy8hk3fkm8vo.jpg"/>
+								
+							</span>
+
+									<span>
+								<button>Android</button>
+								<button>ios</button>
+							</span>
+									<span></span>
+								</div>
+							</div>
+
+						</li>
+						<li><a href="">登录/注册</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="left">
+				<div class="authorAnewacr">
+
+					<ul>
+						<li class="author-info clearfix">
+							<div class="author_img"><img src="img/author.jpg" alt="" /></div>
+							<div class="author_infoR">
+								<ul>
+									<li><a href="">董雨晴</a><span>新人作者</span></li>
+									<li>关注文娱</li>
+									<li>dongyuqing@36kr.com</li>
+								</ul>
+							</div>
+
+						</li>
+						<li>
+							<div class="title_num clearfix">
+								<ul>
+									<li><span><span>209篇</span><span class="arc-total">文章总数</span></span>
+									</li>
+									<li><span><span>286万</span><span class="arc-total">总阅读量</span></span>
+									</li>
+								</ul>
+							</div>
+
+						</li>
+						<li>
+							<div class="new_arc clearfix">
+								<div class="line"></div>
+								<ul>
+									<li><img src="img/2.jpg" alt="" /><span>【首发】社交应用Wecut已获美图领投千万级A轮融资，新添短视频内容创作</span></li>
+									<li><img src="img/2.jpg" alt="" /><span>汪涵任联合制片人，优酷土豆出品的《火星情报局》会不会是网综升级的真实写照？</span></li>
+									<li><img src="img/2.jpg" alt="" /><span>【首发】视频服务提供商当虹科技完成近1亿人民币融资，光线VR布局亦占有一席</span></li>
+									<li><span class="more"><a href="">更多</a><i class="fa fa-angle-double-right"></i></span></li>
+
+								</ul>
+
+							</div>
+
+						</li>
+					</ul>
+				</div>
+				<div class="huodong"><img src="img/huodong.jpg" alt="" /></div>
+				<div class="ydn clearfix">
+					<ul>
+						<li><img src="img/getui.png" alt="" />【个推】大数据告诉你：睡不够的程序猿有多苦</li>
+					</ul>
+				</div>
+				<div class="hot_arc clearfix">
+					<ul>
+						<li class="clearfix"><img src="img/3.png" alt="" /> 懒熊体育完成1200万Pre-A融资，以媒体切入，在体育商业领域填补空白
+						</li>
+						<li class="clearfix"><img src="img/3.png" alt="" />滴滴CEO程维博鳌亚洲演讲：十年后买车就像今天买一匹马一样奇怪</li>
+						<li class="clearfix"><img src="img/3.png" alt="" />【极速融资2.0】与新版的第一次约会，从105位投资人开始
+						</li>
+						<li class="clearfix"><img src="img/3.png" alt="" />WeWork 想用代码颠覆房地产行业</li>
+						<li class="clearfix"><img src="img/3.png" alt="" />电竞造星差异化，不必“美女”或“奇葩”，T-REX电竞认为关键是「会玩」</li>
+						<li class="clearfix"><img src="img/3.png" alt="" />按结果付费的安全SaaS服务模式，TangScan要量化安全服务</li>
+					</ul>
+
+				</div>
+				<div class="huodong"> <img src="img/2.jpg" /></div>
+				<div class="detail">
+					<ul class="detail_h clearfix">
+						<li class="detail_item">快讯</li>
+						<li class="detail_item">下一个</li>
+						<li class="detail_item"> 创业动态</li>
+					</ul>
+					<ul class="detail_con">
+						<li id="kuaixun" class="kuaixun detail_con_item active_test">
+							<div class="zixun_list ">
+								<div class="link_a">
+									<a href="">google</a>
+									<a href="">apple</a>
+									<a href="">microsoft</a>
+									<a href="">yahoo</a>
+									<a href="">samsung</a>
+									<a href="">apple pay</a>
+									<a href="">hp</a>
+									<a href="">富士康</a>
+									<a href="">hulu</a>
+									<a href="">甲骨文</a>
+									<a href="">sharp</a>
+									<a href="">紫光</a>
+									<a href="">360手机</a>
+									<a href="">易订货</a>
+									<a href="">创业支持</a>
+								</div>
+								<div class="news_list">
+									<ul>
+										<li>
+											<p>第一批 Oculus Rift 开售，下周消费者可收货</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>流媒体内容发行商 Hulu 推虚拟现实新应用</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>紫光集团将投资 300 亿美元打造中国在世界半导体领域的首个巨头</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>三星寻求收购人工智能开发商</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>去哪儿创始人庄辰超成立斑马投资</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>ZUK金秀贤定制款手机正式发布，售价1999元</p>
+											<p>1小时前</p>
+										</li>
+										<li>
+											<p>雅虎股东欲更换整个雅虎董事会</p>
+											<p>1小时前</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li id="next" class="next detail_con_item ">
+							<div class="next_list ">
+								<div>
+									<ul>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+										<li class="next_list_item clearfix">
+											<span class="next_list-num"><a href="">
+												<i class="fa fa-angle-up fa-1x"></i>
+												<span class="num">4</span>
+
+											</a>
+											</span>
+											<span class="next_list_center">
+											<p> music for maker</p>
+											<p>为创业者准备，无版权的优质音乐</p>
+											</span >
+											<span class="next_list_time">3天前</span>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+
+						</li>
+						<li id="ed" class="ed detail_con_item ">
+							<div class="ed_list">
+								<ul>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+									<li class="ed_list_item">
+										<p><img src="img/author.jpg" alt="" /><span>快仓智能仓储</span>😃<span>10分钟前</span></p>
+										<p>快仓智能仓储被投资人关注</p>
+
+									</li>
+								</ul>
+
+							</div>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="right">
+				<div class="wenzi">
+					<h2>【首发】社交应用 Wecut 已获美图领投千万级 A 轮融资，新添短视频内容创作</h2>
+					<p class="author_ri"><img src="img/author.jpg" alt="" />
+						<span><a href="">董雨晴</a><span> •  11 小时前
+						</span></span>
+					</p>
+					<img src="img/2.jpg" />
+					<p>
+						36 氪获悉，社交应用Wecut已完成超过千万人民币的 A 轮融资，本轮融资由美图领投，创新谷跟投。
+
+					</p>
+					<p>据该团队披露，Wecut 自上线至今，已累积近 500 万注册用户，其中 90%为 95、00 后群体。这样的用户画像，其实是可以从 Wecut 的产品调性映射出来的。
+
+					</p>
+					<p>作为工具，Wecut 提供将文字（包括气泡和标配的字幕）、贴纸、滤镜、抠图甚至声音等添加到图片上的功能，通过不同功能间的排列和组合，以激发用户 UGC 的能力，而且随着使用时间的叠加，以上内容均会沉淀在用户自己个人的素材库内，方便下一次继续使用。</p>
+					<p>发布的内容会显示在首页的 feed 流里，当然用户也可以选择给内容打标签，推送到不同垂直的频道内，比如 “那些年一起追过的 TVB”、“就爱看电影”、“侏罗纪喵园” 等。在我看来，这不仅是 Wecut 刺激用户生产内容的机制，更能够将同好的人放在一起，形成社群的属性。</p>
+					<img src="img/1.jpg" />
+					<p>当然，Wecut 在产品设计上有这样一点特殊，即用户可以选择原创，也可以选择在 feed 流中选择自己喜欢的内容进行二次创作（改图），“这样做粉丝可以有很高的参与感，而且做图的成本更低”，Wecut 的创始人吴泽锋说道。</p>
+					<p>如此，Wecut 需要在这几方面更有所深耕，除了官方生产的模板性内容外，获取更多优质的生产者，也可以称其为网红，生产更多优质的内容，以带动剩余用户的二次创作，从而使得整个社区的活跃度提升。“95 的诉求大多为曝光自己，为了调动这些网红的积极性，Wecut 会给他们好的推荐位”，吴泽锋补充道。</p>
+					<p>当短视频的风口来了，Wecut 自然也不能放弃这样的机会。所以在刚刚上线的 IOS 新版本当中，用户已经可以发布视频类的内容。贴纸和音乐能够模版化，以此尝试降低短视频制作的成本。虽然，这样的内容如果想做的更好玩，门槛较图片会更高一些，但吴泽锋称，“这方面，我们会多跟动画师合作，建立更多的视频模板，还是以 PGC 引导的模式为主”。同时，Wecut 会挑选一部分有趣的 UGC 进行二次创作形成内容合集。</p>
+					<p>当一个好玩又好看的社区氛围有了，Wecut 将这样考虑它的商业化，好作品的打赏、会员服务，“有点像 Q 空间 + 贴吧的联合体，可以有自我主页的装扮。” 当然，在吴泽锋看来，13-20 岁的用户喜欢的商品比较集中，垂直电商也将是不错的选择。而品牌广告、游戏等则在考察过转化率之后才会考虑。 </p>
+					<p>原创文章，作者：董雨晴，如若转载，请注明出处：http://36kr.com/p/5045023.html</p>
+					<p>看完这篇还不够？如果你也在创业，并且希望自己的项目被报道，请<a href="">戳这里</a>告诉我们！”</p>
+					<p>AD：【36Kr】企业服务论坛——为中小企业提供最佳的互联网解决方案
+						<br>AD：【36Kr】企业服务论坛——为中小企业提供最佳的互联网解决方案
+						<br />AD：36Kr】企业服务论坛——为中小企业提供最佳的互联网解决方案</p>
+
+					<div class="shang ">
+						<div class="toggle toogle_position">
+							<span><a  href="">赏</a>	
+									</span>
+							<div class="list list_content  ">
+								<img src="img/saoyisao.png" />
+							</div>
+						</div>
+					</div>
+
+					<br />
+
+					<div class="lable"><span>标签：</span><a href="">泛娱乐</a><a href="">社交/社区</a></div>
+					<hr />
+					<div class="zanAnshare"><span class="zan">
+						<span class="thumb"><i class="fa fa-thumbs-o-up"></i></span>
+						<span class="left_triangle_frame list_block ">5</span>
+						<span class="thumb"><i class="fa fa-thumbs-o-down"></i></span>
+						<span class="left_triangle_frame list_block ">5</span>
+						</span><span class="share">
+							<span>分享到：</span>
+						<span class="share_cir"><a href=""><i class="fa fa-weixin"></i></a></span>
+						<span class="share_cir"><a href=""><i class="fa fa-qq"></i></a></span>
+						<span class="share_cir"><a href=""><i class="fa fa-weibo"></i></a></span>
+						</span>
+					</div>
+
+				</div>
+				<div class="xqbd">创业者们，如果你或你的朋友想被36氪报道，<a href="">请狠戳这里</a> 寻求报道</div>
+				<div class="comments">
+					<p> 文章评论(0)</p>
+					<p class="login_a"><a href="">登录</a>后参与讨论</p>
+					<hr />
+				</div>
+
+			</div>
+
+		</div>
+		</div>
+		<div class="krprofile clearfix">
+			<span>
+			<a href="">36Kr首页</a> - <a href="">资讯首页</a> - <a href="">【首发】社交应用Wecut已获美图领投千万级A轮融资，新添短视频内容创作</a>
+			</span>
+			<span>
+			<a href="">资讯</a><a href="">融资</a><a href="">氪空间</a><a href="">寻求报道</a>
+			</span>
+		</div>
+		<div class="footer">
+			<div class="footer-header  clearfix">
+				<div class="footer-header-left">
+					<h3><img src="img/logo.png" alt="" /> 让创业更简单</h3>
+					<p><a href="">关于36氪</a> | <a href="">氪空间</a> | <a href="">加入我们</a> | <a href="">寻求报道</a>| <a href="">客户端下载</a></p>
+					<p>反馈建议：<a href="">service@36kr.com</a></p>
+					<p>客服电话：<a href="">400-995-3636</a></p>
+					<p>工作时间：周一到周五 10:00-19:00</p>
+				</div>
+				<div class="footer-header-center">
+					<h2>合作伙伴</h2>
+					<p>
+						<a href=""><img src="img/aly.png" alt="" /></a>
+						<a href=""><img src="img/txyun.png" alt="" /></a>
+						<a href=""><img src="img/qny.png" alt="" /></a>
+						<a href=""><img src="img/dp.png" alt="" /></a>
+					</p>
+					<p>
+						<a href=""><img src="img/getui.png" alt="" /></a>
+						<a href=""><img src="img/qy.png" alt="" /></a>
+						<a href=""><img src="img/rongyun.png" alt="" /></a>
+					</p>
+					<p>
+						<a href=""><img src="img/sina.png" alt="" /></a>
+						<a href=""><img src="img/umeng.png" alt="" /></a>
+						<a href=""><img src="img/upy.png" alt="" /></a>
+						<a href=""><img src="img/yp.png" alt="" /></a>
+					</p>
+
+				</div>
+				<div class="footer-header-right"></div>
+				<img src="img/appqr.png" />
+				<h3>扫码关注微信公众平台</h3>
+			</div>
+
+		</div>
+
+		<div class="footer-footer clearfix">
+			<div>
+				本站由 <img src="img/aliyunfooter.png" /> © 2011~2016 36氪 | 京ICP备12031756号 | 京公网安备11010802012285号
+			</div>
+			<div>
+				<i class="fa fa-weixin share_cir"></i>
+				<i class="fa fa-qq share_cir"></i>
+				<i class="fa fa-wechat share_cir"></i>
+				<i class="fa fa-weibo share_cir"></i>
+			</div>
+
+		</div>
+		<div class="fixed">
+			<div>
+				<span class="fixed-align-left"><i class="fa fa-align-left "></i></span>
+				<span class="fixed-align-cengter"><i class="fa fa-align-center "></i></span>
+				<span class="fixed-toggle"><i class="fa fa-th-list "></i>
+					<div class="fixed-content" >
+						<div class="fixed-content-header">
+								<ul>
+									<li>36氪</li>
+									<li>36氪股权投资</li>
+									<li>36氪融资</li>
+									<li>氪空间</li>
+								</ul>
+						</div>
+						<div class="fixed-content-content">
+							<div class="kr36 kr36_fix fixed-content-content-item active_test">
+								<div><img src="img/auf3bjiuzybiy4yp.jpg"/></div>
+								<div>为你推送和解读最前沿、最有料的科技创投资讯</div>
+							</div>
+							<div class="kr36_vcpe kr36_fix fixed-content-content-item">
+								<div><img src="img/dxj8nqvn9a0dn12p.jpg"/></div>
+								<div>123</div>
+							</div>
+							<div class="kr36_finance kr36_fix fixed-content-content-item ">
+								<div><img src="img/dxj8nqvn9a0dn12p.jpg"/></div>
+								<div>3124</div>
+							</div>
+							<div class="kr36_zone kr36_fix fixed-content-content-item ">
+								<div><img src="img/dxj8nqvn9a0dn12p.jpg"/></div>
+								<div>1234</div>
+							</div>
+						</div>
+					</div>
+				</span>
+				<span><a href="#"><i class=" fa fa-arrow-circle-up"></i></a></span>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var fixed_align_left = $(".fixed-align-left");
+		var fixed_align_center = $(".fixed-align-cengter");
+		var contanier_left = $(".container .left");
+		var iscenter = false;
+		var container = $(".container");
+//		container.css({
+//			transformStyle: "preserve3d"
+//		});
+		fixed_align_center.click(function() {
+			if (!iscenter) {
+				contanier_left.animate({
+						opacity: "1"
+					}, 0,
+					function() {
+						contanier_left.css({
+							display: "none"
+						});
+					});
+				iscenter = true;
+			}
+		});
+		fixed_align_left.click(function() {
+			if (iscenter) {
+				contanier_left.animate({
+						opacity: "1"
+					}, 0,
+					function() {
+						contanier_left.css({
+							display: "inline-block"
+						});
+					});
+				iscenter = false;
+			}
+		});
+		//	detail选项卡
+		var a = $(".detail_item");
+		var b = $(".detail_con_item");
+		$(".detail_item").click(function() {
+			$(this).css({
+				background: "white"
+			});
+			$($(this).siblings(".detail_item")).css({
+				background: "#efefef"
+			});
+			var c = b[a.index(this)];
+			$($(c).siblings(".detail_con_item")).removeClass("active_test");
+			$(c).addClass("active_test");
+		});
+		//悬浮选项卡
+		var fix_a = $(".fixed-content-header ul li");
+		var fix_b = $(".fixed-content-content-item");
+		$(fix_a).click(function() {
+			$(this).css({
+				background: "white"
+			});
+			$($(this).siblings(".fixed-content-header ul li")).css({
+				background: "#efefef"
+			});
+			var c = fix_b[fix_a.index(this)];
+			$($(c).siblings(".fixed-content-content-item")).removeClass("active_test");
+			$(c).addClass("active_test");
+		});
+	</script>
+
+</html>

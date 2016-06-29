@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="img/jquery.min.js"></script>
+		<style type="text/css">
+			.content {
+				width: 700px;
+				height: 400px;
+				/*background: black;*/
+				clear: both;
+				overflow: hidden;
+			}
+			
+			.leftbt,
+			.rightbt {
+				width: 100px;
+				height: 100%;
+				background: #F3F4F6;
+				opacity:0.95;
+			}
+			
+			.leftbt,
+			.showlist {
+				float: left;
+			}
+			
+			.showlist {
+				width: 500px;
+				height: 100%;
+				position: relative;
+			}
+			
+			.rightbt {
+				float: left;
+			}
+			
+			ul.list {
+				list-style: none;
+				position: absolute;
+				width: 400%;
+				/*background: green;*/
+				left: 0px;
+				z-index: -1;
+			}
+			
+			ul li {
+				float: left;
+			}
+			
+			.item {
+				width: 500px;
+				height: 200px;
+				/*background: orange;*/
+			}
+			
+			.item {
+				width: 500px;
+				height: 200px;
+				/*background: orangered;/*/
+			}
+			
+			.leftbt img {
+				display: block;
+				position: relative;
+				top: 38%;
+				width: 100%;
+				transform: rotate(-90deg);
+				cursor: pointer;
+			}
+			
+			.rightbt img {
+				display: block;
+				position: relative;
+				top: 38%;
+				width: 100%;
+				transform: rotate(90deg);
+				cursor: pointer;
+			}
+			
+			.item ul {
+				list-style: none;
+				clear: both;
+				overflow: hidden;
+			}
+			
+			.item ul li,
+			 {
+			 	
+				display: block;
+				float: left;
+				padding: 10px;
+			}
+			
+			.list img {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="content">
+			<div class="leftbt">
+				<img src="img/backtop.png" />
+			</div>
+			<div class="showlist">
+				<ul class="list">
+					<li>
+						<div class="item">
+							<ul>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+
+						<div class="item">
+
+							<ul>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="item">
+							<ul>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+								<li><img src="img/dyl.png" alt="" /></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+
+						<div class="item">
+
+							<ul>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+								<li><img src="img/bcgf.png" alt="" /></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="rightbt"><img src="img/backtop.png" /></div>
+		</div>
+		<script>
+			var leftbt = $(".leftbt");
+			var ul = $("ul");
+			var num = 0;
+			var widthOffest = -500;
+			var rightBt = $(".rightbt")
+			leftbt.click(function() {
+				num++;
+				if (num < 3) {
+					ul.animate({
+						left: widthOffest * num + "px"
+					}, 500);
+				} else {
+					num = 1;
+					ul.css({
+						left: 0 + "px"
+					});
+					ul.animate({
+						left: widthOffest * num + "px"
+					}, 500);
+				}
+			});
+			rightBt.click(function() {
+				num--;
+				if (num < 0) {
+					num = 1
+					ul.css({
+						left: widthOffest * 2 + "px"
+					});
+					
+				}
+				ul.animate({
+					left: widthOffest * num
+				}, 500);
+			});
+			setInterval(function(){
+				num++;
+				if (num < 3) {
+					ul.animate({
+						left: widthOffest * num + "px"
+					}, 500);
+				} else {
+					num = 1;
+					ul.css({
+						left: 0 + "px"
+					});
+					ul.animate({
+						left: widthOffest * num + "px"
+					}, 500);
+				}
+			},3000)
+		</script>
+	</body>
+
+</html>

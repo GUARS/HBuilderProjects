@@ -1,0 +1,26 @@
+.content{
+	padding: 40px;
+	background: white;
+}
+article{
+	font-size: 1.25em;
+	color: #888;
+}
+.news-date{
+	display: inline-block;
+	font-size: 0.8em;
+	color: #AAAAAA;
+	margin: 10px 0 20px;
+}
+.img img{
+	width: 100%;
+}
+.news-content{
+	font-size: 1em;
+	line-height: 1.2em;
+	color: #AAAAAA;
+}
+.news-content p{
+	margin-top: 20px;
+	
+}

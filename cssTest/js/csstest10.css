@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.table {
+  display: table;
+  width: 100%;
+  height: 50%;
+  margin: 10px;
+}
+.table .tablecell {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  display: table-cell;
+  vertical-align: top;
+}
+.table .tablecell .content {
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  background: wheat;
+}
+.table .tablecell .tabletest {
+  height: 50px;
+}
+/*# sourceMappingURL=csstest10.css.map */

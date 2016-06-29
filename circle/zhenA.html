@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				width: 128px;
+				height: 73px;
+				/*transform: rotateZ(deg);*/
+				background: url(img/pet_15.BIG.png);
+				background-size:cover ;
+				animation: a 1s  steps(7) infinite,b 5s infinite linear;
+				
+			}
+			.c{
+				width: 100%;
+				/*border: 1px;*/
+				border-bottom: 10px solid red;
+			}
+			@keyframes b{
+				from{
+					margin-left: 0%;
+				}
+				to{
+					margin-left: 100%;
+				}
+			}
+			
+			@keyframes a{
+				from{
+				
+					background-position:0 0%;
+					}
+				to{
+					
+					background-position:0 700%;
+				}
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="a">
+			
+			
+		</div>
+		<div class="c">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+[data-role=slide] {
+	width: 200px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	background: green;
+	border-radius: 20px;
+}
+
+[data-role=slide] .point {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	background: white;
+}

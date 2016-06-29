@@ -1,0 +1,75 @@
+* {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.play {
+	background: #000;
+	width: 580px;
+	height: 115px;
+	position: fixed;
+	bottom: 80px;
+	left: -440px;
+	border-radius: 5px;
+	transform: translate3d(0, 0, 0);
+	transition: transform 1.5s;
+	box-shadow: 10px 10px 20px #888;
+	display: table;
+}
+.play>*{
+	display: table-cell;
+}
+.play-img{
+	width: 85px;
+}
+.play_switch {
+	width: 20px;
+	height: 100%;
+	background: url(../img/player_bg.png) no-repeat -22px 0;
+	
+	right: 1px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.play_lyric {
+	width: 115px;
+	height: 100%;
+	background: #ddd;
+	/*position: absolute;*/
+	/*right: -100px;*/
+	border-radius: 5px;
+	box-shadow: 10px 10px 20px #888;
+	/*border: 1px solid #000000;*/
+}
+
+.singerImage {
+	width: 115px;
+	height: 100%;
+	background-size:cover;
+}
+
+
+.play_bt {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background:url(../img/player_bg.png) no-repeat -338px -90px;
+}
+
+.pre_bt {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: url(../img/player_bg.png) no-repeat -68px -28px;
+}
+
+.next_bt {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: url(../img/player_bg.png) no-repeat -150px -29px;
+}

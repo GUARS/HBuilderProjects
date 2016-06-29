@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/slide.js"></script>
+		<link rel="stylesheet" href="css/musicPlaye.css" />
+		<link rel="stylesheet" href="css/slide.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.item {
+				background: greenyellow;
+				padding: 10px;
+				margin: 10px 0;
+			}
+			
+			.singer {
+				width: 30px;
+				height: 30px;
+				vertical-align: middle;
+			}
+			
+			.Play_center {
+				position: relative;
+			}
+			
+			.playCtr {
+				position: absolute;
+				bottom: 0;
+			}
+			
+			.slide {
+				position: relative;
+				top: -10px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<footer id="play" class="play clearfix">
+			<div class="singerImage">
+			</div>
+			<div class="Play_center" style="color: #43f0f5; ">
+				<div class="other" style="width: 100%;height: 50px; color: red;">
+					<div class="lyric-image"></div>
+				</div>
+				<div class="songInfo">
+					<marquee class="songname" scrollamount="5">
+					</marquee>
+				</div>
+				<div class="playCtr">
+					<span class="pre_bt"></span>
+					<span class="play_bt"></span>
+					<span class="next_bt"></span>
+					<span class="slide" data-role="slide" data-step="" data-minvalue="0" data-maxvalue="1"></span>
+				</div>
+			</div>
+
+			<div class="play_switch">
+			</div>
+			<div class="play_lyric">
+			</div>
+		</footer>
+		<div class="d">
+			<img id="singerImg" src="" />
+			<ul class="list">
+			</ul>
+			<audio id="audio" src="" autoplay="autoplay">		
+			</audio>
+		</div>
+		<script type="text/javascript">
+		//当窗口被关闭的时候记录歌曲最后播放的位置
+			window.onunload = function() {
+				localStorage.lastdata_mid = document.querySelector("[data-currentPlay=play]").getAttribute("data-mid");
+			}
+			window.onbeforeunload = function() {
+//				return "can you continue?";
+			}
+//songName.scrollAmount=2;
+
+			var slide = new Myslide("[data-role=slide]")
+			slide.addevent(function(mes) {
+				audio1.volume = mes;
+			});
+			//lazyload
+			function lazyload(ele) {
+				show();
+				window.addEventListener("scroll", show);
+
+				function show() {
+					var imgs = ele.querySelectorAll(".lazy");
+					if (imgs.length == 0) {
+						window.removeEventListener("scroll", show);
+					}
+					for (var i = 0; i < imgs.length; i++) {
+						if (getTop(imgs[i]) <= window.innerHeight + document.body.scrollTop) {
+							imgs[i].src = imgs[i].getAttribute("data-src");
+							imgs[i].classList.remove("lazy");
+							imgs[i].removeAttribute("data-src");
+						}
+					}
+				}
+
+				function getTop(ele) {
+					var top = ele.offsetTop;
+					var parent = ele.offsetParent;
+					while (parent) {
+						top += parent.offsetTop;
+						parent = parent.offsetParent;
+					}
+					return top;
+				}
+
+			}
+			//播放面板的推拉
+			var singerImage = document.getElementsByClassName("singerImage")[0];
+			var singerName = document.getElementsByClassName("singername")[0];
+			var songName = document.getElementsByClassName("songname")[0];
+			var isplay_switchon = false;
+			var fo = document.getElementById("play");
+			var play_switch = document.getElementsByClassName("play_switch")[0];
+			songName.scrollAmount=5;
+			songName.direction="left";
+			songName.height="20px"
+			
+			play_switch.onclick = function() {
+					if (!isplay_switchon) {
+						fo.style.transform = "translate3d(calc(100% - 140px) ,0,0)";
+						play_switch.style.background = "url(img/player_bg.png) no-repeat -0 0";
+					} else {
+						fo.style.transform = "translate3d(0,0,0)";
+						play_switch.style.background = "url(img/player_bg.png) no-repeat -22px 0";
+					}
+					isplay_switchon = !isplay_switchon;
+				}
+				//		播放器操作
+			var url1 = "http://i.y.qq.com/v8/fcg-bin/v8_4web.fcg?&format=json&jsoncallback=?";
+			var a = $(".list");
+			var str = "";
+			var mid = [];
+			var ajaxIsEnd = false;
+			var singerInfo = {};
+			var singer = {};
+			var audio1 = $("#audio").get(0);
+			var current = 0;
+
+			function playmusic(songid) {
+				var currentplay = $("[data-currentPlay=play]");
+				var mid = currentplay.get(0).getAttribute("data-mid");
+				singerImage.style.backgroundImage = 'url(' + getImgUrl(singerInfo[mid].singer[0].mid) + ')';
+//				singerName.innerText =;
+				songName.innerText =  singerInfo[mid].singer[0].name+"---"+singerInfo[mid].songname;
+
+				audio1.src = "http://tsmusic24.tc.qq.com/" + songid + ".mp3";
+				audio1.play();
+			}
+			$.getJSON(url1, function(data) {
+				eval(data);
+			})
+
+			function jsoncallback(data) {
+				var data = data.data;
+				var j = 0;
+				for (var p in data) {
+					for (var i = 0; i < data[p].length; i++) {
+						if (data[p][i].songname) {
+							j++;
+							str += "<li class=\"item\" data-mid=" + data[p][i].songid + ">" + "<img class=\"singer lazy\" src=\"http://i.gtimg.cn/mediastyle/y/img/cover_mine_130.jpg\" data-src = \"" + getImgUrl(data[p][i].singer[0].mid) + "\"/>" + data[p][i].singer[0].name  +data[p][i].songname + "</li>";
+							singerInfo[data[p][i].songid] = data[p][i];
+							mid[j - 1] = data[p][i].songid;
+							singer[data[p][i].songid] = data[p][i].singer[0].mid;
+						}
+					}
+				}
+				a.append(str);
+				//				playFirstMusic();
+				if (localStorage.lastdata_mid) {
+					document.querySelector("[data-mid=\"" + localStorage.lastdata_mid + "\"]").setAttribute("data-currentPlay", "play");
+					playmusic(localStorage.lastdata_mid)
+				} else {
+					playFirstMusic();
+				}
+				lazyload(document.getElementsByClassName("list")[0]);
+			}
+			var item = $(".list");
+			item.on("click", ".item", function() {
+				var currentplay = $("[data-currentPlay=play]")
+				$(this).get(0).setAttribute("data-currentPlay", "play");
+				currentplay.get(0).removeAttribute("data-currentPlay");
+				playmusic($(this).attr("data-mid"));
+			});
+			audio1.onended = function() {
+				var currentplay = $("[data-currentPlay=play]")
+				if (currentplay.get(0).nextElementSibling) {
+					playNextMusic();
+				} else {
+					playFirstMusic();
+				}
+			}
+
+			function getImgUrl(id) {
+				var baseUrl = "http://i.gtimg.cn/music/photo/mid_singer_300/";
+				var id_arr = id.split("");
+				var id_length = id_arr.length;
+				var dir = id_arr[id_length - 2] + "/" + id_arr[id_length - 1];
+				return baseUrl + dir + "/" + id + ".jpg";
+			}
+
+			function playFirstMusic() {
+				var firstMusicID = a.get(0).firstElementChild.getAttribute("data-mid");
+				a.get(0).firstElementChild.setAttribute("data-currentPlay", "play");
+				playmusic(firstMusicID);
+			}
+
+			function playNextMusic() {
+				var currentplay = $("[data-currentPlay=play]");
+				var next = currentplay.get(0).nextElementSibling;
+				next.setAttribute("data-currentPlay", "play");
+				currentplay.removeAttr("data-currentPlay");
+				playmusic(next.getAttribute("data-mid"));
+			}
+
+			function playPreMusic() {
+				var currentplay = document.querySelector("[data-currentPlay=play]");
+				var pre = currentplay.previousElementSibling;
+				pre.setAttribute("data-currentPlay", "play");
+				currentplay.removeAttribute("data-currentPlay");
+				playmusic(pre.getAttribute("data-mid"));
+			}
+
+			function pauseMusic() {
+
+				if (!audio1.paused) {
+					audio1.pause();
+					pause.style.background = "url(img/player_bg.png) no-repeat -109px -45px"
+				} else {
+					audio1.play();
+					pause.style.background = "url(img/player_bg.png) no-repeat -338px -90px";
+
+				}
+			}
+
+			var playnext = document.getElementsByClassName("next_bt")[0];
+			var pause = document.getElementsByClassName("play_bt")[0];
+			var playpre = document.getElementsByClassName("pre_bt")[0];
+			pause.onclick = function() {
+				pauseMusic();
+			}
+			playnext.onclick = function() {
+				var currentplay = $("[data-currentPlay=play]")
+				if (currentplay.get(0).nextElementSibling) {
+					playNextMusic();
+				} else {
+					playFirstMusic();
+				}
+			}
+			playpre.onclick = function() {
+				var currentplay = document.querySelector("[data-currentPlay=play]");
+				if (currentplay.previousElementSibling) {
+					playPreMusic();
+				} else {
+					alert("this is first can not play pre")
+				}
+
+			}
+		</script>
+
+	</body>
+
+</html>

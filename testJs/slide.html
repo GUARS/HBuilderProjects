@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<style>[data-role=slide] {
+	width: 200px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	background: green;
+	border-radius: 20px;
+}
+
+[data-role=slide] .point {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	background: white;
+}</style>
+	</head>
+
+	<body>
+
+		<span class="slide" data-role="slide" data-step="30" data-minvalue="-127" data-maxvalue="127"></span>
+
+	</body>
+
+	<script>function slide(selector) {
+	var slide = document.querySelector(selector);
+	slide.innerHTML = "<span class='point'></span>"
+	var point = document.querySelector(".point");
+	var pointstart;
+	var pointend;
+	var point_offl;
+	var change = function() {
+
+	};
+	var step = slide.getAttribute("data-step");
+	var minvalue = slide.getAttribute("data-minvalue");
+	var maxvalue = slide.getAttribute("data-maxvalue");
+	slide.onmousedown = function(event) {
+		pointstart = event.clientX;
+		point_offl = point.offsetLeft;
+		console.log(1)
+		window.onmousemove = move;
+		window.onmouseup = up;
+
+	}
+	this.addevent = function(changed) {
+		if (typeof changed === "function") {
+			change = changed;
+		} else {
+			alert(1)
+		}
+
+	}
+
+	function move(event) {
+		var a = event.clientX - pointstart;
+		a = Math.abs(a) > step ? (a - a % step) : 0;
+		console.log(a + "------a")
+		
+		if (point_offl + a < 0) {
+			point.style.left = 0;
+		} else if (point_offl + a > getIntWidth(getcssStyle(slide, "width")) - getIntWidth(getcssStyle(point, "width"))) {
+			point.style.left = (getIntWidth(getcssStyle(slide, "width")) - getIntWidth(getcssStyle(point, "width"))) + "px";
+
+		} else {
+			point.style.left = point_offl + a + "px";
+		}
+		//				change((maxvalue - minvalue) / 90 * point.offsetLeft + (minvalue - 0)).toFixed(1))
+		console.log(((maxvalue - minvalue) / 180 * point.offsetLeft + (minvalue - 0)).toFixed(0))
+		change(2);
+
+	}
+
+	function up() {
+		window.onmousemove = null;
+		window.onmouseup = null;
+
+	}
+
+	function getIntWidth(str) {
+		var len = str.length;
+		var str = str.substring(0, len - 2);
+		return str - 0;
+	}
+
+	function getcssStyle(ele, stylename) {
+		var style = document.defaultView.getComputedStyle(ele, "").getPropertyValue(stylename);
+		return style;
+	}
+}</script>
+	<script>function change(mes) {
+	//		alert(mes);
+}
+var change1 = "1"
+var a = new slide("[data-role=slide]")
+window.sli
+a.addevent(change);</script>
+
+</html>

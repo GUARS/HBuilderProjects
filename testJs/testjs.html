@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slide.js"></script>
+		<link rel="stylesheet" href="css/slide.css" />
+		<style>
+			* {
+				margin: 0;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.play {
+				background: #000;
+				width: 600px;
+				height: 115px;
+				position: fixed;
+				bottom: 20px;
+				/*left: -580px;*/
+				left: 0px;
+				border-radius: 5px;
+				transform: translate3d(0, 0, 0);
+				transition: transform 1.5s;
+				box-shadow: 10px 10px 20px #888;
+			}
+			
+			.play_switch {
+				width: 20px;
+				height: 100%;
+				background: url(img/player_bg.png) no-repeat -22px 0;
+				position: absolute;
+				right: 1px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			
+			.play_lyric {
+				width: 100px;
+				height: 100%;
+				background: #ddd;
+				position: absolute;
+				right: -100px;
+				border-radius: 5px;
+				box-shadow: 10px 10px 20px #888;
+				/*border: 1px solid #000000;*/
+			}
+			
+			.singer {
+				width: 85px;
+				height: 85px;
+				/*vertical-align: middle;*/
+				background: url(http://i.gtimg.cn/mediastyle/y/img/cover_mine_130.jpg) no-repeat center;
+			}
+			
+			.play>div {
+				float: left;
+			}
+			
+			.clearfix::before {
+				display: table;
+				content: "";
+				overflow: hidden;
+			}
+			
+			.play_left>* {
+				float: left;
+			}
+			
+			.play_bt {
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				background: url(img/player_bg.png) no-repeat -109px -45px;
+			}
+			
+			.pre_bt {
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				background: url(img/player_bg.png) no-repeat -68px -28px;
+			}
+			
+			.next_bt {
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				background: url(img/player_bg.png) no-repeat -150px -29px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<footer id="play" class="play clearfix">
+
+			<div class="play_left clearfix">
+				<!--<img class="singer" src="http://i.gtimg.cn/mediastyle/y/img/cover_mine_130.jpg"/>-->-->
+				<div class="singer">
+				</div>
+				<ul style="color: red;">
+					<li>
+						<span class="singername">
+					12
+				</span>
+						<span class="songname">
+				21
+				</span>
+
+					</li>
+					<li>
+
+						<span class="pre_bt"></span>
+						<span class="play_bt"></span>
+						<span class="next_bt"></span>
+						<span class="slide" data-role="slide" data-step="" data-minvalue="0" data-maxvalue="1"></span>
+
+						<!--<input style="background: url(img/player_bg.png);" type="range" name="points" />-->
+					</li>
+				</ul>
+			</div>
+			<div class="play_switch">
+
+			</div>
+			<div class="play_lyric">
+
+			</div>
+
+		</footer>
+
+	</body>
+	<script>
+		var slide = new Myslide("[data-role=slide]");
+		slide.addevent(function(mes) {
+			console.log(mes)
+		})
+		var isplay_switchon = false;
+		var fo = document.getElementById("play");
+		var play_switch = document.getElementsByClassName("play_switch")[0];
+		play_switch.onclick = function() {
+			if (!isplay_switchon) {
+				fo.style.transform = "translate3d(calc(100% - 20px),0,0)";
+				play_switch.style.background = "url(img/player_bg.png) no-repeat -0 0";
+			} else {
+				fo.style.transform = "translate3d(0,0,0)";
+				play_switch.style.background = "url(img/player_bg.png) no-repeat -22px 0";
+			}
+			isplay_switchon = !isplay_switchon;
+		}
+		fo.addEventListener("DOMContentLoaded", function() {
+			console.log(1)
+		})
+		document.addEventListener("DOMContentLoaded", function() {
+			console.log("a")
+		}, false)
+		window.onload = function() {
+			console.log("b")
+		}
+	</script>
+
+</html>

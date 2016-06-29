@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: #000;
+			}
+			
+			.testTranstion {
+				box-sizing:content-box;
+				width: 190px;
+				height: 11px;
+				
+				background: linear-gradient(0deg ,yellow,gold);
+				transition: height ease-in-out 1s;
+				position: relative;
+				filter: blur();
+				/*overflow: hidden;*/
+				overflow-Y:hidden ;
+			}
+			
+			.testTranstion:hover {
+				height: 400px;
+				/*opacity: 1;*/
+			}
+			.juanzhou1{
+				position: absolute;
+				bottom:10px;
+				left: 70px;
+				width: 190px;
+				height: 90px;
+			}
+			.juanzhou {
+				width: 10px;
+				height:190px;
+				background: url(img/juanzhou.png);
+				background-size: cover;
+				transform: rotateZ(90deg);
+				
+				/*border-left: 10px inset gold;
+				border-right: 10px inset gold;*/
+				/*opacity: 0.7;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="testTranstion">
+			<div >
+				
+				<p style="width: 10px;  font-size: 50px; color: red; ">12345</p>
+			</div>
+			<div class="juanzhou1">
+				<div class="juanzhou">
+					
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

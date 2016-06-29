@@ -1,0 +1,59 @@
+.touxiang img{
+	border-radius: 50%;
+}
+.touxiang{
+	text-align: center;
+	padding: 40px 0 20px;
+}
+.login ul {
+	font-size: 1.5em;
+	
+	border: 1px lightgray solid;
+	border-radius: 15px;
+	background: white;
+}
+form{
+	margin: 0 10px;
+}
+.login ul li{
+
+	padding: 20px 10px;
+	
+}
+.login ul li span{
+	display: inline-block;
+	width: 100px;
+
+}
+.login ul li:first-child{
+	border-bottom: 2px solid lightgray;
+}
+.login ul input{
+	width: calc(100% - 100px);
+	height: 30px;
+	border: 0px;
+	outline: 0;
+	font-size: 1.3em;
+}
+.login-bt{
+	border-radius: 10px;
+	/*display: block;*/
+	width: 100%;
+	padding:20px 0;
+	color: white;
+	font-size: 1.5em;
+	background: #006db4;
+	margin: 25px 0;
+}
+.regist_bt{
+	display: block;
+	background: white;
+	width: 100%;
+	padding: 20px 0;
+	border:1px solid lightgray;
+	font-size: 1.5em;
+	text-align: center;
+	color: #6391c2;
+	border-radius: 10px;
+}
+

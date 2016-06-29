@@ -1,0 +1,105 @@
+<!DOCTYPE h00000
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+	/**{box-sizing: border-box;}*/
+	/*borde-box 元素的最大为起始设置的，content-box是正常模式下的*/
+		.TestBorder_groove{
+			width: 100px;
+			height: 100px;
+			border:50px groove red;
+			float: left;
+			margin-right: 10px;
+		}
+		.TestBorder_ridge{
+			width: 100px;
+			height: 100px;
+			border: 50px ridge goldenrod;
+			float: left;
+			margin-right: 10px;
+			
+		}
+		.TestBorder_inset{
+			width: 100px;
+			height: 100px;
+			border: 50px inset green;
+			float: left;
+		}
+		.TestBorder_outset{
+			width: 100px;
+			height: 100px;
+			border: 20px outset yellow;
+			float: left;
+			margin-left: 20px;
+			-webkit-box-reflect: right -1px url("img/5.jpg");
+		
+		}
+		.testBorder_radius{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			/*background-color: red;*/
+			/*设置填充色*/
+			float: left;
+			border: 10px solid darkseagreen;
+			/*box-shadow: -0px 0px 0px 40px dimgray inset  ;*/
+			background: -webkit-radial-gradient(circle,red,yellow);
+			background-image: repeating-radial-gradient(circle,red,yellow,green );  
+		
+		}
+		.testBorder_radius .burn{
+			font-size: 50px;
+			font-weight: bold;
+			color: black;
+			
+			text-shadow: 
+			0 -5px 10px #FFCC00,
+			2px -10px 10px #FFCC00,
+			-2px -15px 10px #ff00cc,
+			2px -25px 10px #FFFF00
+			;
+			
+		}
+		 .test_gradint{
+			width:200px ;
+			height:200px ;float: left;
+			/*线性渐变*/
+			/*background-image: linear-gradient(50deg,green,red) ;*/
+			/*径向渐变*/
+			/*background: -webkit-radial-gradient(circle,red,yellow,green);*/
+			/*重复径向渐变*/
+		/*background-image: repeating-radial-gradient(circle,red,yellow,green );*/
+		/*重复线性渐变*/
+		background: repeating-linear-gradient(0deg,green,red);
+		
+		}
+		
+	</style>
+	</head>
+	
+	<body>
+		<div id="border_style" style="flex-wrap: nowrap; width: 800px;height: 200px; overflow:hidden ;" >
+			
+		
+		<div class="TestBorder_groove border_style" >
+			groove 3d凹槽
+		</div>
+		<div class="TestBorder_ridge border_style">ridge 3d垄状</div>
+		<div class="TestBorder_inset border_style">inset inset边框</div>
+		<div class="TestBorder_outset  border_style">outset outset边框 和倒影box-reflex</div>
+		<div class="TestBorder_inherit border_style">inherit继承父元素边框</div>
+	</div>
+	<div id="border_radius" style="margin-top: 20px; clear: both; overflow: hidden;">
+		<div class="testBorder_radius"">
+			<div class="burn">制作圆形</div>
+	
+		</div>
+		<div class="test_gradint" >
+			渐变
+		</div>
+		
+	</div>
+	</body>
+</html>

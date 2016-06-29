@@ -1,0 +1,29 @@
+.regi-item-pos {
+	position: relative;
+}
+.regi-item-pos i{
+	display: inline-block;
+	text-align: center;
+	font-size: 1.2em;
+	position: absolute;
+	padding: 10px 0;
+	right: 10px;
+}
+.meber-list{
+	position: absolute;
+	right:20px;
+	top:100%;
+	background: white;
+	border: 1px solid lightgray;
+	padding: 10px;
+	display: none;
+	
+}
+.meber-list-active{
+	display: block;
+}
+ .meber-list-item{
+ 	padding: 5px 0;	
+ 	border-bottom: 1px solid #CCCCCC;
+ 	color: #888888;
+}

@@ -1,0 +1,168 @@
+{
+  "index.html": {
+    "resources": [
+      "shouye.html"
+    ],
+    "refer": [
+      "shouye.html"
+    ]
+  },
+  "shouye.html": {
+    "resources": [
+      "css/main.css",
+      "css/footer.css",
+      "img/NagIcon/lc.png",
+      "img/NagIcon/xm.png",
+      "img/HomeImg/cyxu@2x.png",
+      "img/banner/banner-1.png",
+      "img/HomeImg/cwgl@2x.png",
+      "img/HomeImg/khgl@2x.png",
+      "css/header.css",
+      "img/NagIcon/syh.png",
+      "img/HomeImg/xwgg@2x.png",
+      "img/HomeImg/zckh@2x.png",
+      "img/HomeImg/gcal@2x.png",
+      "personinfo.html",
+      "css/font-awesome.min.css",
+      "css/shouye-content.css",
+      "img/HomeImg/ptfc_s@2x.png",
+      "img/HomeImg/bmlc@2x.png",
+      "js/modernizr-custom.min.js",
+      "img/NagIcon/pt.png",
+      "img/NagIcon/wd.png",
+      "img/HomeImg/xgmm@2x.png",
+      "cyxm.html"
+    ],
+    "refer": [
+      "personinfo.html",
+      "cyxm.html"
+    ]
+  },
+  "personinfo.html": {
+    "resources": [
+      "img/NagIcon/sy.png",
+      "img/SubImg/gr_1@2x.png",
+      "css/personinfo.css",
+      "img/SubImg/touxiang@2x.png",
+      "img/SubImg/grxxbg@2x.png",
+      "img/SubImg/gr_2@2x.png",
+      "fonts/fontawesome-webfont.woff",
+      "img/NagIcon/wdh.png",
+      "img/SubImg/gr_4@2x.png",
+      "img/SubImg/gr_3@2x.png",
+      "khgl.html",
+      "ptfc.html",
+      "login.html",
+      "zckh.html"
+    ],
+    "refer": [
+      "khgl.html",
+      "ptfc.html",
+      "login.html",
+      "zckh.html"
+    ]
+  },
+  "khgl.html": {
+    "resources": [
+      "img/SubImg/kehubg.png",
+      "css/khgl.css",
+      "ptfc.html"
+    ],
+    "refer": [
+      "ptfc.html"
+    ]
+  },
+  "ptfc.html": {
+    "resources": [
+      "css/ptfc.css",
+      "img/SubImg/ptfc.png",
+      "img/NagIcon/pth.png",
+      "bmlc.html",
+      "personinfo.html"
+    ],
+    "refer": [
+      "bmlc.html",
+      "personinfo.html"
+    ]
+  },
+  "cyxm.html": {
+    "resources": [
+      "css/cyxm-content.css",
+      "img/SubImg/30w_1@2x.png",
+      "js/jquery.min.js",
+      "img/SubImg/50w.png",
+      "img/SubImg/10w_2@2x.png",
+      "img/NagIcon/xmh.png",
+      "img/SubImg/30w_2@2x.png",
+      "img/SubImg/50w_2@2x.png",
+      "img/SubImg/10w_1@2x.png",
+      "shouye.html",
+      "img/SubImg/50w_1@2x.png",
+      "img/SubImg/30w.png",
+      "img/SubImg/10w.png",
+      "bmlc.html",
+      "img/NagIcon/sy.png",
+      "css/main.css",
+      "css/footer.css",
+      "img/NagIcon/lc.png",
+      "css/header.css",
+      "css/font-awesome.min.css",
+      "fonts/fontawesome-webfont.woff",
+      "img/NagIcon/pt.png",
+      "img/NagIcon/wd.png",
+      "ptfc.html"
+    ],
+    "refer": [
+      "shouye.html",
+      "bmlc.html",
+      "ptfc.html"
+    ]
+  },
+  "bmlc.html": {
+    "resources": [
+      "css/bmlc.css",
+      "img/ProjectCase/gc2@2x.png",
+      "img/SubImg/process_1@2x.png",
+      "cyxm.html",
+      "img/NagIcon/lch.png",
+      "ptfc.html"
+    ],
+    "refer": [
+      "cyxm.html",
+      "ptfc.html"
+    ]
+  },
+  "fastRegist.html": {
+    "resources": [
+      "css/list.css",
+      "js/jquery.min.js",
+      "css/fastRegist.css",
+      "login.html"
+    ],
+    "refer": [
+      "login.html"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "fastRegist.html",
+      "css/login-content.css",
+      "img/login-default.png",
+      "ptfc.html"
+    ],
+    "refer": [
+      "fastRegist.html",
+      "ptfc.html"
+    ]
+  },
+  "zckh.html": {
+    "resources": [
+      "css/zckh.css",
+      "css/biaodan.css",
+      "shouye.html"
+    ],
+    "refer": [
+      "shouye.html"
+    ]
+  }
+}
